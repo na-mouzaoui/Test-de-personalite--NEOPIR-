@@ -1,0 +1,4 @@
+pyinstaller --onefile --windowed --icon=logo.ico --add-data "logo.ico;." Teste_D2000-V1.0.0.py
+
+
+pyinstaller --onefile --windowed --icon=logo.ico --add-data "logo.ico;." Teste_D2000-V1.0.0.py

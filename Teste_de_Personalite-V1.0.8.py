@@ -29,263 +29,585 @@ def get_resource_path(relative_path):
     return os.path.join(os.path.abspath("."), relative_path)
 
 # Utilisez `get_resource_path` pour obtenir le chemin de l'icône
-icon_path = get_resource_path("logo.ico")
-root.iconbitmap(icon_path)
+#icon_path = get_resource_path("logo.ico")
+#root.iconbitmap(icon_path)
 root.geometry("1100x550")  # Taille constante : 900x600 pixels
 root.title("Test de Personnalité  V1.0.8")
 
 # Liste des propositions
 #propositions=["prest?"]
-propositions = [
-"Je ne suis pas du genre à me faire du souci",
-"J’aime vraiment bien la plupart des gens que je rencontre",
-"J’ai une imagination très active.",
-"J’ai tendance à être cynique et sceptique en ce qui concerne les intentions des autres",
-"Je suis réputé(e) pour ma prudence et mon bon sens",
-"Je me mets souvent en colère à cause de la manière dont les gens me traitent",
-"J’essaie d’éviter les foules.",
-"Les préoccupations esthétiques et artistiques ne sont pas très importantes pour moi",
-" Je ne suis ni rusé(e) ni sournois ( e )",
-"Je préfère me garder des possibilités de choix plutôt que tout planifier à l’avance",
-"Il est rare que je me sente trop seul(e) et cafardeux (se)",
-"Je suis autoritaire, énergique et je n’hésite pas à m’affirmer",
-"Sans émotions fortes, la vie serait sans intérêt pour moi",
-"Certains trouvent que je suis égoïste et que je ne pense qu’à moi",
-"J’essaie d’accomplir consciencieusement toutes les taches qui me sont confiées",
-"Quand j’ai affaire à d’autres personnes, je redoute toujours de faire une gaffe",
-"Dans le travail et dans les loisirs, je prends tout mon temps",
-"Je  suis bien installé( e ) dans mes habitudes",
-"Je préférerais coopérer avec les autres plutôt que me mettre en compétition",
-"Je suis nonchalant (e ) et pas très ambitieux (se)",
-"Je fais rarement des excès en quoi que ce soit",
-"J’ai souvent une forte envie de quelque chose qui romprait la monotonie",
-"Je prends souvent plaisir à jouer avec des théories ou des idées abstraites",
-"Cela ne me gêne pas de me vanter de mes talents et de ce que j’ai réalisé",
-"J’arrive assez bien à m’organiser pour faire les choses à temps",
-"Je me sens souvent désespéré(e) et je voudrais que quelqu’un d’autre résolve mes problèmes",
-"Je n’ai jamais sauté de joie au sens littéral du terme.",
-"Je crois que laisser les étudiants écouter des orateurs controversés ne peut que les embrouiller et les égarer",
-"Les dirigeants politiques doivent être plus attentifs à l’aspect humain de leur politique",
-"Au fil des années, j’ai fait un certain nombre de choses plutôt stupides",
-"Il est facile de me faire peur.",
-"Je n’ai pas beaucoup de plaisir à bavarder avec les gens",
-"j’essaie de maintenir toutes mes pensées dans une direction réaliste et d’éviter les envolées de l’imagination",
-"Je crois que la plupart des gens sont fondamentalement bien intentionnés",
-"Je ne prends pas les devoirs civiques, comme le vote, très au sérieux.",
-"Je suis une personne d’humeur égale",
-"J’aime avoir beaucoup de gens autour de moi.",
-"Il m’arrive quelquefois de m’absorber complètement dans la musique que j’écoute.",
-"Si c’est nécessaire, je suis disposé(e) à manipuler les gens pour obtenir ce que je veux",
-"Je maintiens mes affaires nettes et propres",
-"Quelquefois, je me sens complètement sans valeur",
-"Je ne m’affirme pas toujours autant que je devrais",
-"J’éprouve rarement des émotions fortes",
-"j’essaie d’être poli(e) avec chaque personne que je rencontre",
-"Il m’arrive parfois de ne pas tenir mes engagements ou de ne pas assumer mes responsabilités comme je le devrais",
-"Je me sens rarement mal à l’aise quand je suis avec des gens",
-"Quand je fais quelque chose, je le fais avec énergie",
-"Je pense qu’il est intéressant d’apprendre de nouvelles activités de loisir et de s’y perfectionner",
-"Je peux être sarcastique et cassant(e ) si besoin est",
-"J’ai un ensemble bien défini d’objectifs et je travaille pour les atteindre de façon ordonnée",
-"j’ai du mal à résister à mes désirs",
-"Je n’aimerais pas passer mes vacances à Las Vegas",
-"Je trouve les discussions philosophiques ennuyeuses",
-"Je préfère ne pas parler de moi-même  ni de ce que j’ai accompli",
-"Je perds beaucoup de temps avant de me mettre au travail",
-"Je me sens capable de faire face à la plupart de mes problèmes",
-"J’ai quelquefois éprouvé une joie intense ou de l’extase",
-"Je crois que les lois et les politiques sociales devraient changer pour refléter les besoins d’un monde qui  change",
-"J’ai la tête dure et je ne suis pas sentimental (e) dans mes attitudes",
-"j’examine les choses en  détail avant d’arriver à une décision",
-"Il est rare que je me sente craintif (Ve) ou anxieux (se)",
-"j’ai la réputation d’être une personne chaleureuse et amicale",
-"J’ai une vie imaginaire active",
-"Je crois que la plupart des gens vont profiter de vous si vous les laissez faire",
-"Je me tiens au courant et je prends habituellement des décisions intelligentes",
-"J’ai la réputation d’avoir le sang chaud et de me mettre facilement en colère",
-"Je préfère habituellement faire les choses seul ( e)",
-"Assister à des spectacles de ballet ou de danse moderne m’ennuie",
-"Je ne pourrais tromper personne, même si je le voulais",
-"Je ne suis pas quelqu’un de très méthodique",
-"Je suis rarement triste ou déprimé",
-"J’ai souvent dirigé les groupes auxquels j’ai  appartenu",
-"La manière dont je sens les choses est importante pour moi",
-"Certains me trouvent froid(e)et calculateur (trice)",
-"Je paie mes dettes rapidement et dans leur totalité",
-"Certaines fois, j’ai eu tellement honte que j’aurais voulu me cacher",
-"J’ai tendance à travailler lentement mais surement",
-"Une  fois que j’ai trouvé la bonne manière de faire quelque chose, je m’y tiens",
-"J’hésite à exprimer ma colère, même quand elle est justifiée",
-"Quand je commence un programme d’amélioration personnelle (par exemple : faire de la gymnastique, faire un régime, ou suivre une série de cours, etc.), j’abandonne habituellement au bout de quelques jours",
-"J’ai peu de difficulté à résister à la tentation",
-"Il m’est arrivé de faire des choses rien que pour l’excitation ou le frisson",
-"Je prends plaisir à résoudre des problèmes ou des énigmes",
-"Je suis meilleur(e) que la plupart des gens, et je le sais",
-"Je suis quelqu’un d’efficace qui vient toujours à bout du travail",
-"Quand je suis sous la pression de situation trop difficile, j’ai quelquefois l’impression que je vais m’effondrer",
-"Je ne suis pas un(e) optimiste souriant(e)",
-"Je crois que nous devrions nous tourner vers nos autorités religieuses pour les décisions concernant les questions morales",
-"On n’en fait jamais trop pour les pauvres et les personnes âgées",
-"Il m’arrive à l’occasion d’agir d’abord et de réfléchir ensuite",
-"Je me sens souvent tendu(e) et nerveux (se)",
-"Beaucoup de gens me trouvent assez froid(e) et distant ( e)",
-"Je n’aime pas perdre mon temps à rêvasser",
-"Je pense que la plupart des gens auxquels j’ai affaire sont honnêtes  et dignes de confiance",
-"Je me mets souvent dans des situations sans y être complètement préparé (e)",
-"On ne me considère pas comme une personne susceptible je dois avoir affaire",
-"J’ai vraiment besoin des autres si je reste longtemps seul(e )",
-"Je suis intrigué(e) par les formes et les motifs que je trouve dans l’art et dans le nature",
-"Etre parfaitement honnête est une mauvaise façon de faire des affaires",
-"J’aime bien garder chaque chose à sa place, comme cela je sais exactement ou elle est",
-"J’ai quelquefois éprouvé un sentiment profond de culpabilité ou de péché",
-"Dans les réunions, je laisse d’habitude les autres parlers",
-"Il est rare que j’accorde beaucoup d’attention à mes sentiments du moment",
-"J’essaie en général d’être attentionné(e) et prévenant (e)",
-"Il m’arrive de tricher quand je joue seul( e) (par exemple :quand je joue au solitaire, quand je fias des réussites,..Etc.)",
-"ça ne me gêne pas trop si les gens  se moquent de moi ou me taquinent",
-"J’ai souvent le sentiment de déborder d’énergie",
-"j’essaie souvent des plats nouveaux et exotiques",
-"Si je n’aime pas les gens, je le leur fais savoir",
-"Je travaille dur pour  atteindre mes objectifs",
-"Quand je suis devant mes plats favoris, j’ai tendance à trop manger",
-"J’ai tendance à éviter les films choquants ou effrayants",
-"Je perds quelquefois tout intérêt quand les gens parlent de sujets très abstraits et théoriques",
-"J’essaie d’être modeste",
-"J’ai du mal à me forcer à faire ce que je devrais",
-"Je garde la tête froide dans les situations d’urgence",
-"Quelquefois, je déborde de bonheur",
-"Je crois que les idées différentes du bon (bien, beau, vrai) et du mauvais (mal, laid, faux) que les gens ont dans d’autres sociétés peuvent être valables pour eux",
-"Je n’ai aucune sympathie pour les mendiants",
-"Avant d’agir, je réfléchis toujours aux conséquences de mon action",
-"Je ressens rarement de l’appréhension au sujet de l’avenir",
-"Je prends réellement plaisir à parler avec les gens",
-"Je prends plaisir à me concentrer sur une image intérieure ou une rêverie et à explorer toutes ses possibilités en les laissant croitre et à explorer toutes ses possibilités en les laissant croitre et se développer",
-"Je suis méfiant (e) quand quelqu’un fait quelque chose de gentil pour moi",
-"Je suis fier(e)de la sureté de mon jugement",
-"J’en arrive souvent à être  dégouté (e)par les gens auxquels je dois avoir affaire",
-"Je préfère un travail qui me permet de travailler seul(e) sans être embêté (e) par les autres",
-"La poésie a peu ou pas d’effet sur moi",
-"Je détesterais qu’on me prenne pour un(e) hypocrite",
-"Il me semble que je ne serai jamais capable de m’organiser",
-"J’ai tendance à me faire des reproche quand quelque chose va de travers",
-"Les autres se tournent souvent vers moi pour prendre des décisions",
-"j’éprouve une grande variété d’émotions ou de sentiments du moment",
-"Je n’ai pas la réputation d’être généreux (se)",
-"Quand je prends un engagement, on peut toujours compter sur moi pour aller jusqu’au bout.",
-"Je me sens souvent inférieur ( e) aux autres",
-"Je ne suis pas aussi rapide et dynamique que les autres",
-"Je préfère souvent passer mon temps dans un entourage familier",
-"Quand on m’a insulté (e), j’essaie simplement de pardonner et d’oublier",
-"Je ne ressens pas un besoin intense de promotion",
-"Je m’abandonne rarement à mes impulsions",
-" J’aime bien être là où il y a de l’action",
-"Je prends plaisir à travailler sur des énigmes du gens perlent de sujet très abstraits et théoriques",
-"J’ai une très haute opinion de moi-même",
-"Une fois que je démarre un projet, je le termine presque toujours",
-"Il est souvent difficile pour moi de prendre une décision",
-"Je ne me trouve pas particulièrement insouciant(e) et gai(e)",
-"Je crois que la fidélité à ses propres idéaux et principes  est plus importante que « l’ouverture d’esprit »",
-"Les besoins humains devraient toujours avoir la priorité sur les considérations économiques",
-"Je fais souvent des choses sur l’impulsion du moment.",
-"Je me fais souvent du souci à propos de choses qui pourraient mal tourner",
-"Je trouve facile de sourire et d’être agréable avec des inconnus",
-"Si je sens que  mon esprit commence à dériver vers des rêveries, j’ai l’habitude de m’occuper et de me mettre à me concentrer  sur un travail ou une activité",
-"Ma première réaction est de faire confiance aux gens",
-"Je n’ai pas l’impression de réussir complètement en quoi que ce soit",
-"Il en faut beaucoup pour me rendre furieux (se)",
-"Je préférerais des vacances sur une plage à la mode plutôt que dans une cabane isolée dans les bois",
-"Certains genres de musique exercent sur moi fascination sans fin",
-"Parfois, j’utilise la ruse pour amener les gens à faire ce que je veux",
-"J’ai tendance à être quelque peu méticuleux (se) et exigeant(e)",
-"J’ai une mauvaise opinion de moi-même",
-"Je préfère suivre mon propre chemin plutôt que diriger les autres",
-"Je remarque rarement les changements d’humeur  ou les sentiments que provoquent des environnements différents",
-"La plupart des gens que je connais m’aiment bien",
-"J’ai des principes moraux et j’y adhère strictement",
-"Je me sens à l’aise en présence de mes patrons ou d’autres autorités",
-"j’ai habituellement l’impression d’être pressé( e)",
-"je fais parfois des changements dans la maison, juste pour essayer quelque chose de différent",
-"Si quelqu`un provoque une bagarre, je suis prêt( e) à riposter.",
-" Je m’efforce de réussir tout ce que je peux",
-"Je mange quelquefois à m’en rendre malade",
-"J’adore le  frisson qu’on ressent sur les montagnes russes",
-"J’ai peu d’intérêt pour la réflexion sur la nature de l’univers ou sur la condition humaine",
-"Je n’ai pas l’impression d’être meilleur(e)que les autres, quelle que soit leur situation",
-"Quand un projet devient trop difficile, j’ai  tendance à en démarrer un autre",
-"Je me débrouille  assez bien dans une situation de crise",
-"Je suis une personne joyeuse et pleine de bonne humeur",
-"Je me trouve large d’esprit et tolérant(e)pour les façons de vivre des autres",
-"Je crois que tous les êtres humains sont dignes de respect",
-"Il est rare que je prenne des décisions hâtives",
-"j’ai moins de peurs que la plupart des gens",
-"J’ai des liens affectifs forts avec mes amis",
-"Quand j’étais enfant, il était rare que je prenne plaisir à « jouer à faire semblant",
-"J’ai tendance à supposer le meilleur chez les gens",
-"Je suis quelqu’un de très compétent",
-"Il m'est parfois arrivé d'être amer(ère) et plien(e ) de ressentiment.",
-"Habituellement, les réunions qui rassemblent un grand nombre de personnes m’ennuient",
-" Quelquefois, quand je lis de la poésie ou quand je regarde une œuvre d’art, je ressens un frisson ou j’ai la chair de poule",
-"il m’arrive de faire aux gens ce que je veux en les menaçant  ou en les flattant",
-"Je ne suis pas un(e)maniaque du nettoyage",
-"Quelquefois, les choses me semblent plutôt mornes et sans espoir",
-"Dans les conversations, j’ai tendance à parler plus que les autres.",
-"Je trouve facile d’avoir de l’empathie, c’est –à-dire de ressentir moi-même ce que les autres ressentent",
-"Je me considère comme une personne charitable",
-"Ce que je fais, j’essaie de le faire soigneusement, comme ça il n’ya pas a le refaire",
-"Si j’ai dit ou fait quelque chose de mal à quelqu’un, je peux à peine supporter de le regarder en face à nouveau",
-" Mon rythme de vie est rapide",
-" En vacances, je préfère retourner dans un endroit que je connais bien plutôt qu’aller dans un nouvel endroit",
-"Je suis dur(e) et inflexible",
-"Je m’efforce à l’excellence dans tout ce que je fais",
-"Quelquefois, je fais sur une impulsion des choses que je regrette par la suite",
-"Je suis attiré(e)par les  couleurs vives et les styles voyants",
-"J’ai beaucoup de curiosité intellectuelle",
-"j’aime mieux faire l’éloge des autres plutôt que recevoir moi-même des éloges",
-"Il y a tant de petits travaux qu’il faudrait faire que parfois, tout simplement je les ignore tous",
-"Quand tout a l’air d’aller de travers, je reste capable de prendre les bonnes décisions",
-"J’emploie rarement des mots tels que « fantastique » ou « sensationnel » pour décrire ce qui m’est arrivé",
-"Je pense que si les gens ne savent pas à quoi ils croient quand ils ont vingt-cinq ans il ya quelque chose qui ne tourne pas rond chez eux",
-"J’ai de la compassion pour ceux qui ont moins de chance que moi",
-"Quand je pars en voyage, je prépare à l’avance un programme minutieux",
-"Des pensées effrayantes s’introduisent quelquefois dans ma tête",
-"Je m’intéresse vraiment aux gens avec lesquels je travaille",
-"J’aurais du mal à laisser simplement mon esprit vagabonder sans contrôle ni direction",
-"j’ai une grande confiance dans la nature humaine",
-"Je suis efficace et productif (ve) dans mon travail.",
-"Pour moi, même des petites contrariétés peuvent être irritantes",
-"J’aime les «  fêtes » avec plein de gens",
-"J’aime lire de la poésie qui met l’accent sur les sentiments et  les images plutôt que sur le déroulement de l’histoire",
-"Je suis fier(ère) de l’habileté avec laquelle je manipule les gens",
-"Je passe beaucoup de temps à chercher des choses que j’ai mal rangées",
-" trop souvent, quand les choses vont mal, je me décourage et j’ai envie d’abandonner",
-"Je ne trouve pas facile de prendre une situation en main",
-" Des choses étranges – comme certains parfums ou des noms d’endroits lointains – peuvent provoquer en moi des émotions puissantes",
-"Si je peux, je fais un effort pour aider les autres",
-"Il faudrait réellement que je sois malade pour manquer une journée du travail",
-"Quand des gens que je connais fond des choses idiotes, j’en suis gêné(e) pour eux",
-"Je suis une personne très active.",
-" Je prends toujours le même chemin quand je vais quelque part.",
-"Je m’engage souvent dans des disputes avec ma famille ou mes collègues de travail",
-"Je consacre trop de temps au travail en négligeant la famille, les aimes et les loisirs",
-"Je suis toujours capable de garder le contrôle de mes sentiments",
-"J’aime bien faire partie de la foule dans les manifestations sportives",
-"j’ai une grande variété d’intérêts intellectuels",
-"Je suis quelqu’un de supérieur",
-"J’ai beaucoup d’autodiscipline",
-"Je suis assez stable émotionnellement",
-"Je ris facilement",
-"Je crois que la «  nouvelle morale » à base de permissivité n’est pas du tout une morale",
-"Je préférerais avoir la réputation de pardonner plutôt que celle d’être juste",
-"Avant de répondre à une question, j’y réfléchis à deux fois"
+propositionsFR = [
+  "Je ne suis pas du genre à me faire du souci",
+  "J’aime vraiment bien la plupart des gens que je rencontre",
+  "J’ai une imagination très active.",
+  "J’ai tendance à être cynique et sceptique en ce qui concerne les intentions des autres",
+  "Je suis réputé(e) pour ma prudence et mon bon sens",
+  "Je me mets souvent en colère à cause de la manière dont les gens me traitent",
+  "J’essaie d’éviter les foules.",
+  "Les préoccupations esthétiques et artistiques ne sont pas très importantes pour moi",
+  " Je ne suis ni rusé(e) ni sournois ( e )",
+  "Je préfère me garder des possibilités de choix plutôt que tout planifier à l’avance",
+  "Il est rare que je me sente trop seul(e) et cafardeux (se)",
+  "Je suis autoritaire, énergique et je n’hésite pas à m’affirmer",
+  "Sans émotions fortes, la vie serait sans intérêt pour moi",
+  "Certains trouvent que je suis égoïste et que je ne pense qu’à moi",
+  "J’essaie d’accomplir consciencieusement toutes les taches qui me sont confiées",
+  "Quand j’ai affaire à d’autres personnes, je redoute toujours de faire une gaffe",
+  "Dans le travail et dans les loisirs, je prends tout mon temps",
+  "Je  suis bien installé( e ) dans mes habitudes",
+  "Je préférerais coopérer avec les autres plutôt que me mettre en compétition",
+  "Je suis nonchalant (e ) et pas très ambitieux (se)",
+  "Je fais rarement des excès en quoi que ce soit",
+  "J’ai souvent une forte envie de quelque chose qui romprait la monotonie",
+  "Je prends souvent plaisir à jouer avec des théories ou des idées abstraites",
+  "Cela ne me gêne pas de me vanter de mes talents et de ce que j’ai réalisé",
+  "J’arrive assez bien à m’organiser pour faire les choses à temps",
+  "Je me sens souvent désespéré(e) et je voudrais que quelqu’un d’autre résolve mes problèmes",
+  "Je n’ai jamais sauté de joie au sens littéral du terme.",
+  "Je crois que laisser les étudiants écouter des orateurs controversés ne peut que les embrouiller et les égarer",
+  "Les dirigeants politiques doivent être plus attentifs à l’aspect humain de leur politique",
+  "Au fil des années, j’ai fait un certain nombre de choses plutôt stupides",
+  "Il est facile de me faire peur.",
+  "Je n’ai pas beaucoup de plaisir à bavarder avec les gens",
+  "j’essaie de maintenir toutes mes pensées dans une direction réaliste et d’éviter les envolées de l’imagination",
+  "Je crois que la plupart des gens sont fondamentalement bien intentionnés",
+  "Je ne prends pas les devoirs civiques, comme le vote, très au sérieux.",
+  "Je suis une personne d’humeur égale",
+  "J’aime avoir beaucoup de gens autour de moi.",
+  "Il m’arrive quelquefois de m’absorber complètement dans la musique que j’écoute.",
+  "Si c’est nécessaire, je suis disposé(e) à manipuler les gens pour obtenir ce que je veux",
+  "Je maintiens mes affaires nettes et propres",
+  "Quelquefois, je me sens complètement sans valeur",
+  "Je ne m’affirme pas toujours autant que je devrais",
+  "J’éprouve rarement des émotions fortes",
+  "j’essaie d’être poli(e) avec chaque personne que je rencontre",
+  "Il m’arrive parfois de ne pas tenir mes engagements ou de ne pas assumer mes responsabilités comme je le devrais",
+  "Je me sens rarement mal à l’aise quand je suis avec des gens",
+  "Quand je fais quelque chose, je le fais avec énergie",
+  "Je pense qu’il est intéressant d’apprendre de nouvelles activités de loisir et de s’y perfectionner",
+  "Je peux être sarcastique et cassant(e ) si besoin est",
+  "J’ai un ensemble bien défini d’objectifs et je travaille pour les atteindre de façon ordonnée",
+  "j’ai du mal à résister à mes désirs",
+  "Je n’aimerais pas passer mes vacances à Las Vegas",
+  "Je trouve les discussions philosophiques ennuyeuses",
+  "Je préfère ne pas parler de moi-même  ni de ce que j’ai accompli",
+  "Je perds beaucoup de temps avant de me mettre au travail",
+  "Je me sens capable de faire face à la plupart de mes problèmes",
+  "J’ai quelquefois éprouvé une joie intense ou de l’extase",
+  "Je crois que les lois et les politiques sociales devraient changer pour refléter les besoins d’un monde qui  change",
+  "J’ai la tête dure et je ne suis pas sentimental (e) dans mes attitudes",
+  "j’examine les choses en  détail avant d’arriver à une décision",
+  "Il est rare que je me sente craintif (Ve) ou anxieux (se)",
+  "j’ai la réputation d’être une personne chaleureuse et amicale",
+  "J’ai une vie imaginaire active",
+  "Je crois que la plupart des gens vont profiter de vous si vous les laissez faire",
+  "Je me tiens au courant et je prends habituellement des décisions intelligentes",
+  "J’ai la réputation d’avoir le sang chaud et de me mettre facilement en colère",
+  "Je préfère habituellement faire les choses seul ( e)",
+  "Assister à des spectacles de ballet ou de danse moderne m’ennuie",
+  "Je ne pourrais tromper personne, même si je le voulais",
+  "Je ne suis pas quelqu’un de très méthodique",
+  "Je suis rarement triste ou déprimé",
+  "J’ai souvent dirigé les groupes auxquels j’ai  appartenu",
+  "La manière dont je sens les choses est importante pour moi",
+  "Certains me trouvent froid(e)et calculateur (trice)",
+  "Je paie mes dettes rapidement et dans leur totalité",
+  "Certaines fois, j’ai eu tellement honte que j’aurais voulu me cacher",
+  "J’ai tendance à travailler lentement mais surement",
+  "Une  fois que j’ai trouvé la bonne manière de faire quelque chose, je m’y tiens",
+  "J’hésite à exprimer ma colère, même quand elle est justifiée",
+  "Quand je commence un programme d’amélioration personnelle (par exemple : faire de la gymnastique, faire un régime, ou suivre une série de cours, etc.), j’abandonne habituellement au bout de quelques jours",
+  "J’ai peu de difficulté à résister à la tentation",
+  "Il m’est arrivé de faire des choses rien que pour l’excitation ou le frisson",
+  "Je prends plaisir à résoudre des problèmes ou des énigmes",
+  "Je suis meilleur(e) que la plupart des gens, et je le sais",
+  "Je suis quelqu’un d’efficace qui vient toujours à bout du travail",
+  "Quand je suis sous la pression de situation trop difficile, j’ai quelquefois l’impression que je vais m’effondrer",
+  "Je ne suis pas un(e) optimiste souriant(e)",
+  "Je crois que nous devrions nous tourner vers nos autorités religieuses pour les décisions concernant les questions morales",
+  "On n’en fait jamais trop pour les pauvres et les personnes âgées",
+  "Il m’arrive à l’occasion d’agir d’abord et de réfléchir ensuite",
+  "Je me sens souvent tendu(e) et nerveux (se)",
+  "Beaucoup de gens me trouvent assez froid(e) et distant ( e)",
+  "Je n’aime pas perdre mon temps à rêvasser",
+  "Je pense que la plupart des gens auxquels j’ai affaire sont honnêtes  et dignes de confiance",
+  "Je me mets souvent dans des situations sans y être complètement préparé (e)",
+  "On ne me considère pas comme une personne susceptible et ombrageuse",
+  "J’ai vraiment besoin des autres si je reste longtemps seul(e )",
+  "Je suis intrigué(e) par les formes et les motifs que je trouve dans l’art et dans le nature",
+  "Etre parfaitement honnête est une mauvaise façon de faire des affaires",
+  "J’aime bien garder chaque chose à sa place, comme cela je sais exactement ou elle est",
+  "J’ai quelquefois éprouvé un sentiment profond de culpabilité ou de péché",
+  "Dans les réunions, je laisse d’habitude les autres parlers",
+  "Il est rare que j’accorde beaucoup d’attention à mes sentiments du moment",
+  "J’essaie en général d’être attentionné(e) et prévenant (e)",
+  "Il m’arrive de tricher quand je joue seul(e) (par exemple :quand je joue au solitaire, quand je fais des réussites,..Etc.)",
+  "ça ne me gêne pas trop si les gens  se moquent de moi ou me taquinent",
+  "J’ai souvent le sentiment de déborder d’énergie",
+  "j’essaie souvent des plats nouveaux et exotiques",
+  "Si je n’aime pas les gens, je le leur fais savoir",
+  "Je travaille dur pour  atteindre mes objectifs",
+  "Quand je suis devant mes plats favoris, j’ai tendance à trop manger",
+  "J’ai tendance à éviter les films choquants ou effrayants",
+  "Je perds quelquefois tout intérêt quand les gens parlent de sujets très abstraits et théoriques",
+  "J’essaie d’être modeste",
+  "J’ai du mal à me forcer à faire ce que je devrais",
+  "Je garde la tête froide dans les situations d’urgence",
+  "Quelquefois, je déborde de bonheur",
+  "Je crois que les idées différentes du bon (bien, beau, vrai) et du mauvais (mal, laid, faux) que les gens ont dans d’autres sociétés peuvent être valables pour eux",
+  "Je n’ai aucune sympathie pour les mendiants",
+  "Avant d’agir, je réfléchis toujours aux conséquences de mon action",
+  "Je ressens rarement de l’appréhension au sujet de l’avenir",
+  "Je prends réellement plaisir à parler avec les gens",
+  "Je prends plaisir à me concentrer sur une image intérieure ou une rêverie et à explorer toutes ses possibilités en les laissant croitre et à explorer toutes ses possibilités en les laissant croitre et se développer",
+  "Je suis méfiant (e) quand quelqu’un fait quelque chose de gentil pour moi",
+  "Je suis fier(e)de la sureté de mon jugement",
+  "J’en arrive souvent à être  dégouté (e)par les gens auxquels je dois avoir affaire",
+  "Je préfère un travail qui me permet de travailler seul(e) sans être embêté (e) par les autres",
+  "La poésie a peu ou pas d’effet sur moi",
+  "Je détesterais qu’on me prenne pour un(e) hypocrite",
+  "Il me semble que je ne serai jamais capable de m’organiser",
+  "J’ai tendance à me faire des reproche quand quelque chose va de travers",
+  "Les autres se tournent souvent vers moi pour prendre des décisions",
+  "j’éprouve une grande variété d’émotions ou de sentiments du moment",
+  "Je n’ai pas la réputation d’être généreux (se)",
+  "Quand je prends un engagement, on peut toujours compter sur moi pour aller jusqu’au bout.",
+  "Je me sens souvent inférieur ( e) aux autres",
+  "Je ne suis pas aussi rapide et dynamique que les autres",
+  "Je préfère souvent passer mon temps dans un entourage familier",
+  "Quand on m’a insulté (e), j’essaie simplement de pardonner et d’oublier",
+  "Je ne ressens pas un besoin intense de promotion",
+  "Je m’abandonne rarement à mes impulsions",
+  " J’aime bien être là où il y a de l’action",
+  "Je prends plaisir à travailler sur des énigmes du genre \"casse-tête\" ou \"sport cérébral\"",
+  "J’ai une très haute opinion de moi-même",
+  "Une fois que je démarre un projet, je le termine presque toujours",
+  "Il est souvent difficile pour moi de prendre une décision",
+  "Je ne me trouve pas particulièrement insouciant(e) et gai(e)",
+  "Je crois que la fidélité à ses propres idéaux et principes  est plus importante que « l’ouverture d’esprit »",
+  "Les besoins humains devraient toujours avoir la priorité sur les considérations économiques",
+  "Je fais souvent des choses sur l’impulsion du moment.",
+  "Je me fais souvent du souci à propos de choses qui pourraient mal tourner",
+  "Je trouve facile de sourire et d’être agréable avec des inconnus",
+  "Si je sens que  mon esprit commence à dériver vers des rêveries, j’ai l’habitude de m’occuper et de me mettre à me concentrer  sur un travail ou une activité",
+  "Ma première réaction est de faire confiance aux gens",
+  "Je n’ai pas l’impression de réussir complètement en quoi que ce soit",
+  "Il en faut beaucoup pour me rendre furieux (se)",
+  "Je préférerais des vacances sur une plage à la mode plutôt que dans une cabane isolée dans les bois",
+  "Certains genres de musique exercent sur moi fascination sans fin",
+  "Parfois, j’utilise la ruse pour amener les gens à faire ce que je veux",
+  "J’ai tendance à être quelque peu méticuleux (se) et exigeant(e)",
+  "J’ai une mauvaise opinion de moi-même",
+  "Je préfère suivre mon propre chemin plutôt que diriger les autres",
+  "Je remarque rarement les changements d’humeur  ou les sentiments que provoquent des environnements différents",
+  "La plupart des gens que je connais m’aiment bien",
+  "J’ai des principes moraux et j’y adhère strictement",
+  "Je me sens à l’aise en présence de mes patrons ou d’autres autorités",
+  "j’ai habituellement l’impression d’être pressé( e)",
+  "je fais parfois des changements dans la maison, juste pour essayer quelque chose de différent",
+  "Si quelqu`un provoque une bagarre, je suis prêt( e) à riposter.",
+  " Je m’efforce de réussir tout ce que je peux",
+  "Je mange quelquefois à m’en rendre malade",
+  "J’adore le  frisson qu’on ressent sur les montagnes russes",
+  "J’ai peu d’intérêt pour la réflexion sur la nature de l’univers ou sur la condition humaine",
+  "Je n’ai pas l’impression d’être meilleur(e)que les autres, quelle que soit leur situation",
+  "Quand un projet devient trop difficile, j’ai  tendance à en démarrer un autre",
+  "Je me débrouille  assez bien dans une situation de crise",
+  "Je suis une personne joyeuse et pleine de bonne humeur",
+  "Je me trouve large d’esprit et tolérant(e)pour les façons de vivre des autres",
+  "Je crois que tous les êtres humains sont dignes de respect",
+  "Il est rare que je prenne des décisions hâtives",
+  "j’ai moins de peurs que la plupart des gens",
+  "J’ai des liens affectifs forts avec mes amis",
+  "Quand j’étais enfant, il était rare que je prenne plaisir à « jouer à faire semblant",
+  "J’ai tendance à supposer le meilleur chez les gens",
+  "Je suis quelqu’un de très compétent",
+  "Il m'est parfois arrivé d'être amer(ère) et plien(e ) de ressentiment.",
+  "Habituellement, les réunions qui rassemblent un grand nombre de personnes m’ennuient",
+  " Quelquefois, quand je lis de la poésie ou quand je regarde une œuvre d’art, je ressens un frisson ou j’ai la chair de poule",
+  "il m’arrive de faire aux gens ce que je veux en les menaçant  ou en les flattant",
+  "Je ne suis pas un(e)maniaque du nettoyage",
+  "Quelquefois, les choses me semblent plutôt mornes et sans espoir",
+  "Dans les conversations, j’ai tendance à parler plus que les autres.",
+  "Je trouve facile d’avoir de l’empathie, c’est –à-dire de ressentir moi-même ce que les autres ressentent",
+  "Je me considère comme une personne charitable",
+  "Ce que je fais, j’essaie de le faire soigneusement, comme ça il n’ya pas a le refaire",
+  "Si j’ai dit ou fait quelque chose de mal à quelqu’un, je peux à peine supporter de le regarder en face à nouveau",
+  " Mon rythme de vie est rapide",
+  " En vacances, je préfère retourner dans un endroit que je connais bien plutôt qu’aller dans un nouvel endroit",
+  "Je suis dur(e) et inflexible",
+  "Je m’efforce à l’excellence dans tout ce que je fais",
+  "Quelquefois, je fais sur une impulsion des choses que je regrette par la suite",
+  "Je suis attiré(e)par les  couleurs vives et les styles voyants",
+  "J’ai beaucoup de curiosité intellectuelle",
+  "j’aime mieux faire l’éloge des autres plutôt que recevoir moi-même des éloges",
+  "Il y a tant de petits travaux qu’il faudrait faire que parfois, tout simplement je les ignore tous",
+  "Quand tout a l’air d’aller de travers, je reste capable de prendre les bonnes décisions",
+  "J’emploie rarement des mots tels que « fantastique » ou « sensationnel » pour décrire ce qui m’est arrivé",
+  "Je pense que si les gens ne savent pas à quoi ils croient quand ils ont vingt-cinq ans il ya quelque chose qui ne tourne pas rond chez eux",
+  "J’ai de la compassion pour ceux qui ont moins de chance que moi",
+  "Quand je pars en voyage, je prépare à l’avance un programme minutieux",
+  "Des pensées effrayantes s’introduisent quelquefois dans ma tête",
+  "Je m’intéresse vraiment aux gens avec lesquels je travaille",
+  "J’aurais du mal à laisser simplement mon esprit vagabonder sans contrôle ni direction",
+  "j’ai une grande confiance dans la nature humaine",
+  "Je suis efficace et productif (ve) dans mon travail.",
+  "Pour moi, même des petites contrariétés peuvent être irritantes",
+  "J’aime les «  fêtes » avec plein de gens",
+  "J’aime lire de la poésie qui met l’accent sur les sentiments et  les images plutôt que sur le déroulement de l’histoire",
+  "Je suis fier(ère) de l’habileté avec laquelle je manipule les gens",
+  "Je passe beaucoup de temps à chercher des choses que j’ai mal rangées",
+  " trop souvent, quand les choses vont mal, je me décourage et j’ai envie d’abandonner",
+  "Je ne trouve pas facile de prendre une situation en main",
+  " Des choses étranges – comme certains parfums ou des noms d’endroits lointains – peuvent provoquer en moi des émotions puissantes",
+  "Si je peux, je fais un effort pour aider les autres",
+  "Il faudrait réellement que je sois malade pour manquer une journée du travail",
+  "Quand des gens que je connais fond des choses idiotes, j’en suis gêné(e) pour eux",
+  "Je suis une personne très active.",
+  " Je prends toujours le même chemin quand je vais quelque part.",
+  "Je m’engage souvent dans des disputes avec ma famille ou mes collègues de travail",
+  "Je consacre trop de temps au travail en négligeant la famille, les aimes et les loisirs",
+  "Je suis toujours capable de garder le contrôle de mes sentiments",
+  "J’aime bien faire partie de la foule dans les manifestations sportives",
+  "j’ai une grande variété d’intérêts intellectuels",
+  "Je suis quelqu’un de supérieur",
+  "J’ai beaucoup d’autodiscipline",
+  "Je suis assez stable émotionnellement",
+  "Je ris facilement",
+  "Je crois que la «  nouvelle morale » à base de permissivité n’est pas du tout une morale",
+  "Je préférerais avoir la réputation de pardonner plutôt que celle d’être juste",
+  "Avant de répondre à une question, j’y réfléchis à deux fois"
 ]
+
+
+propositionsAR= [
+    "لست من النوع القلق",
+    "أنا حقا أحب معظم الناس الذين أقابلهم",
+    "لدي خيال جد نشط",
+    "لدي الطبع في أن أكون متشائم ومشكك في نوايا الآخرين",
+    "أنا معروف بتوخي الحذر والحس السليم",
+    "أغضب عادة بسبب طريقة معاملة الآخرين لي",
+    "أحاول تجنب  حشد الجماهير (التجمعات)",
+    "الاهتمامات الجمالية والفنية ليسوا مهمين بالنسبة لي",
+    "لست مخادعا ولست خبيثا",
+    "أفضل ترك الاحتمالات في اختياراتي بدلا من التخطيط المسبق",
+    "نادرا ما أشعر بالوحدة والكآبة",
+    "أنا متسلط وذو طاقة كبيرة ولا أتردد في فرض نفسي",
+    "بدون مشاعر قوية، الحياة تصبح بالنسبة لي بدون معنى",
+    "هناك من يرى أني أناني ولا أفكر سوى في نفسي",
+    "أحاول القيام بكل وعي المهام الموكلة إلي",
+    "عندما أتعامل مع أشخاص آخرين، أخشى دائما القيام بخطأ",
+    "في العمل وفي الراحة أقوم بأخذ كامل وقتي",
+    "أنا متمسك كثيرا بنشاطي المعتاد",
+    "أفضل التعاون مع الآخرين على أن أكون في منافسة معهم",
+    "أنا غير مبالي وغير طموح",
+    "نادرا ما أقوم بإفراط في شيء ما",
+    "لدي في كثير من الأحيان الرغبة في القيام بشيء يغير من عاداتي اليومية",
+    "أجد المتعة في التعامل مع النظريات والأفكار المجردة",
+    "لا يزعجني التفاخر بمواهبي وبالأشياء التي حققتها",
+    "أستطيع أن أنظم نفسي للقيام بالأشياء في الوقت المحدد",
+    "أشعر غالبا باليأس وأود أن يقوم شخص آخر بحل مشاكلي",
+    "لم أقفز من شدة الفرح بمعنى الحقيقي",
+    "أظن أن ترك الطلاب يسمعون لمحاضرات جدلية لا يؤديهم إلى الخلط والضياع",
+    "الزعماء السياسيين يجب أن يكونوا منتبهين للمظهر الإنساني لسياستهم",
+    "مع مرور السنين قمت بأشياء حقا غبية",
+    "من السهل جعلي أخاف",
+    "لا أجد متعة كبيرة في الثرثرة مع الآخرين",
+    "أحاول الحفاظ على أفكاري واقعية وأجتنب كثيرا استعمال الخيال",
+    "أظن أن معظم الأشخاص في جوهرهم حسنوا النية",
+    "لا أتخذ الواجبات المدنية مثل الانتخابات بجد",
+    "أنا شخص ذو مزاج عادل",
+    "أحب أن أكون محاطا بالآخرين",
+    "يحدث لي أحيانا أن أستغرق تماما في الموسيقى التي أستمع لها",
+    "إن كان من الضروري، أنا مستعد للتلاعب بالآخرين من أجل التحصل على ما أريد",
+    "أبقي على أعمالي نظيفة ومرتبة",
+    "أحيانا لا أشعر بأن لدي قيمة",
+    "لا أفرض نفسي كما ينبغي علي فعله",
+    "أنا نادرا ما تراودني مشاعر قوية",
+    "أحاول أن أكون مهذبا مع كل شخص ألتقي به",
+    "أنا في بعض الأحيان لا ألتزم بوعودي ولا أتحمل مسؤولياتي كما أريد",
+    "أشعر نادرا بعدم الراحة عندما أكون مع الناس",
+    "عندما أفعل شيئا فاتني أقوم به بحيوية",
+    "أعتقد أنه من المهم تعلم نشاط جديد للترفيه مع تحسينه",
+    "يمكن أن أكون ساخرًا ومستهزئًا عند الحاجة",
+    "لدي مجموعة من الأهداف وأسعى لتحقيقها بصفة منظمة",
+    "أجد صعوبة التحكم في رغباتي",
+    "أنا لا أحب قضاء عطلتي في لاس فيغاس",
+    "أجد المناقشات الفلسفية مملة",
+    "أفضل ألا أتكلم عن نفسي وما وصلت إليه",
+    "فقدت الكثير من الوقت قبل الشروع في عمل",
+    "أشعر أنني قادر على التعامل مع جميع مشاكلي",
+    "أنا أحيانا أشعر بنشوة وسعادة كبيرة",
+    "أعتقد أن القوانين والسياسة الاجتماعية يجب أن تتغير لأن العالم يتغير",
+    "أنا لا أغير وجهة نظري وكما أنني لست عاطفيا في مواقفي",
+    "أنا أنظر إلى الأشياء بالتفصيل قبل التوصل إلى قرار",
+    "من النادر أن أشعر بالخوف والقلق",
+    "لدي سمعة في كوني شخص دافئ وودي",
+    "لدي حياة خيالية نشيطة",
+    "أعتقد أن معظم الناس يستغلونك إذا تتركهم يفعلون ذلك",
+    "أحرس على تحيين معلوماتي وعادة ما أقوم باتخاذ قرارات ذكية",
+    "لدي سمعة بأنني أغضب بسهولة",
+    "عادة أنا أفضل فعل الأشياء وحيدا",
+    "حضور عروض الباليه أو الرقص الحديث يشعرني بالملل",
+    "لا يمكنني خداع أي أحد حتى ولو أردت ذلك",
+    "أنا لست منهجيا",
+    "أنا نادرا ما أشعر بالحزن أو الاكتئاب",
+    "كثيرا ما كنت قائدا للمجموعات التي أنتمي إليها",
+    "طريقتي في الشعور بالأشياء مهمة بالنسبة لي",
+    "البعض يجدني باردا ومحاسبا لكل شيء",
+    "أدفع ديوني بسرعة وفي مجملها",
+    "في بعض الأحيان أشعر حقا بالخجل لدرجة أنني أردت الاختباء",
+    "أنا أميل للعمل ببطء ولكن بفعالية",
+    "عندما أجد الطريقة الصحيحة لفعل شيء ما أتبعها مباشرة",
+    "أتردد في التعبير عن غضبي، حتى ولو كان مبررا",
+    "عندما أبدأ برنامج في التحسين الذاتي (مثال: القيام بالجمباز، اتباع نظام غذائي أو اتباع مجموعة من الدورات)، عادة ما أتخلى عن النشاط بعد مرور بعض الأيام",
+    "أجد صعوبة في مقاومة الإغراء",
+    "حدث لي أن قمت بأشياء فقط لمجرد الإثارة أو التشويق",
+    "أجد متعة في حل المشاكل أو الألغاز",
+    "أنا أفضل من معظم الناس وأنا أعلم بذلك",
+    "أنا شخص فعال وأنهي دائما عملي",
+    "عندما أكون تحت الضغط في مواقف صعبة، في بعض الأحيان أشعر بأنني سأنهار",
+    "أنا لست متفائلا وضاحكا",
+    "أعتقد أنه يجب أن ننظر إلى السلطات الدينية فيما يخص المشاكل الأخلاقية",
+    "نحن لم نفعل مطلقا الكثير للفقراء والمسنين",
+    "يحدث لي أحيانا العمل أولا ثم التفكير لاحقا",
+    "كثيرا ما أشعر بالتوتر والعصبية",
+    "يجد كثير من الناس أني متحفظ وغير ودي",
+    "أنا لا أحب إضاعة الوقت في أحلام اليقظة",
+    "أعتقد أن معظم الناس الذي أتعامل معها صادقةوجديرة بالثقة",
+    "كثيرا ما أضع نفسي في مواقف دون أن أكون على استعداد كامل لها",
+    "لا يعتبرني الغير كشخص سريع الغضب وشديد الحساسية",
+    "أنا حقا في حاجة للآخرين إذا بقيت فترة طويلة وحدي",
+    "أنا مفتون بالنماذج وأنماط الفن التي أجدها في الطبيعة",
+    "أن تكون صادقا تماما هو وسيلة سيئة للقيام بالأعمال",
+    "أود أن أبقي كل شيء في مكانه، هكذا أنا أعلم تماما أين هو",
+    "تراودني في بعض الأحيان أحاسيس عميقة بالذنب أو بالخطيئة",
+    "في الاجتماعات، عادة ما أدع الآخرين يتكلمون",
+    "من النادر أن أعطي الكثير من الانتباه لإحساساتي في الوقت الحاضر",
+    "أحاول بشكل عام أن أكون مهتم ومنتبها",
+    "أحيانا أغش عندما ألعب لوحدي",
+    "لا يزعجني كثيرا إذا كان الناس يسخرون مني",
+    "كثيرا ما أشعر بأنني ملئ بالطاقة",
+    "أحاول دائما أن أطبخ طبق جديد وغريب",
+    "إذا لم أحب الناس، أظهر لهم ذلك",
+    "أنا أعمل بجد لتحقيق أهدافي",
+    "عندما أكون أمام أطباقي المفضلة، لدي ميل في الأكل كثيرا",
+    "أنا أميل لتجنب الأفلام المروعة والمخيفة",
+    "في بعض الأحيان أعطي كل الاهتمام للناس الذين يتحدثون عن مواضيع مجردة للغاية ونظرية",
+    "أنا أحاول أن أكون متواضعا",
+    "لدي صعوبة في القيام بالأشياء التي يجب القيام بها",
+    "أنا هادئ في حالات الطوارئ",
+    "في بعض الأحيان، أمتلئ بالسعادة",
+    "أعتقد أن الأفكار المختلفة عن الخير والشر والتي لدى الأفراد في مجتمعات أخرى يمكن أن تكون صالحة بالنسبة لهم",
+    "ليس لدي أي تعاطف للمتسولين",
+    "قبل التصرف، أفكر دائما في عواقب أعمالي",
+    "أنا نادرا ما أشعر بالخوف حول المستقبل",
+    "أنا في الواقع، أجد متعة في الحديث مع الناس",
+    "أنا أجد متعة في التركيز على صورة داخلية أو خيالية وأن أستكشف كل إمكانياتها مع ترك لها المساحة لتطوير",
+    "أنا حذر عندما يقوم شخص ما بفعل شيء لطيف بالنسبة لي",
+    "أنا أعتزّ بصفاء حكمي",
+    "كثيرا ما ينتابني الاشمئزاز من الناس الذين أتعامل معهم",
+    "أفضل العمل الذي يسمح لي بالعمل لوحدي دون أن يزعجني الآخرون",
+    "الشعر ليس له تأثير علي",
+    "أكره أن يُؤخذ عني نظرة المنافق",
+    "أعتقد أنني لا أستطيع أن أكون منظما",
+    "أنا أميل إلى لوم نفسي عندما يكون هناك شيء على غير ما يرام",
+    "الناس دائما تأخذ نصيحتي لاتخاذ القرار",
+    "أشعر بمجموعة متنوعة من المشاعر أو العواطف",
+    "ليس لدي سمعة كوني كريم",
+    "عندما آخذ التزام، يمكن دائما الاعتماد علي للذهاب إلى النهاية",
+    "كثيرا ما أشعر أني أقل شأنا من الآخرين",
+    "أنا لست سريعًا بما فيه الكفاية وحيوي كما هم الآخرون",
+    "أنا أفضل قضاء وقتي في بيئة أسرية",
+    "عند أي إهانة لي أحاول ببساطة أن أسامح وأنسى",
+    "لا أشعر بحاجة ملحة لأي تعزيز لحاجاتي",
+    "نادرا ما أترك دوافعي تحكم في شخصيتي",
+    "لا أحب أن أكون في المواقع الزاخرة بالأحداث",
+    "يسرني حل الألغاز الصعبة",
+    "رأيي في نفسي عالي جدا",
+    "بمجرد أن أبدأ مشروعا، أنهيه تقريبا دائما",
+    "غالبا ما يكون من الصعب بالنسبة لي اتخاذ قرار",
+    "أنا لا أجد نفسي بشكل خاص مبتهجً وغير مهتم",
+    "أعتقد أن الولاء لمبادئه الخاصة أكثر أهمية من حرية الفكر",
+    "الاحتياجات الإنسانية يجب أن يكون لديها الأولوية دائما على الاعتبارات الاقتصادية",
+    "كثيرا ما أفعل أشياء على الرغبة الراهنة",
+    "أنا غالبا قلق بشأن الأشياء التي يمكن أن تنقلب بطريقة سيئة",
+    "أجد أنه من السهل أن أبتسم وأكون لطيفً مع المجهولين",
+    "إذا وجدت أن فكري بدأ في الانصراف لأحلام اليقظة، لدي عادة في أن أركز على عمل ما أو على نشاط آخر",
+    "رد فعلي الأول هو أن أثق بالناس",
+    "لا أشعر بنجاح تام في أي شيء أنجزه",
+    "من الصعب جدًا أن أغضب",
+    "أفضل العطلة على الشاطئ على منزل معزول في الغابات",
+    "تُثير بعض الأنماط الموسيقية في نفسي افتتانًا لا حدود له",
+    "أحيانا ألجأ إلى الحيلة لكي يفعل الناس ما أريده",
+    "أنا أميل إلى أن أكون دقيقًا وكثير المطالب",
+    "تقييمي لذاتي سلبي",
+    "أفضل أن أتتبع مساري بدلًا من أن أوجه الآخرين",
+    "أنا نادرا ما ألاحظ تغيرات في المزاج أو المشاعر التي تسببها بيانات مختلفة",
+    "معظم الناس الذين أعرفهم يحبونني",
+    "لدي مبادئ أخلاقية وأنا أوافقها بصرامة",
+    "أشعر بالراحة في حضور المدير أو المسؤول الذي أعمل معه",
+    "عادة ما أشعر أنني مضغوط",
+    "في بعض الأحيان أحدث تغييرًا في المنزل، فقط من أجل تجربة شيء مختلف",
+    "إذا تسبب شخص ما في معركة، أنا مستعد للرد",
+    "إني أحاول تحقيق كل ما بوسعي",
+    "في بعض الأحيان أكل عدة مرات يجعلني مريضًا",
+    "أحب الإثارة التي نشعر بها في لعبة الجبال الروسية(Montagne Russes)",
+    "لدي القليل من الاهتمام في التفكير في طبيعة الكون والأوضاع الإنسانية",
+    "لم أشعر أني أفضل من غيري أيا كانت الوضعية",
+    "عندما يصبح مشروع صعبًا جدًا، أنا أميل لبدء آخر",
+    "أسير الأمور بشكل جيد جدًا في حالة الأزمات",
+    "أنا شخص مرح وذو مزاج جيد",
+    "أجد نفسي متفهمًا وأتقبل آراء ونمط حياة الآخرين",
+    "أعتقد أن جميع البشر يستحقون الاحترام",
+    "من النادر أن أتخذ قرارًا متسرعًا",
+    "لدي خوف أقل من معظم الناس",
+    "لدي علاقات قوية مع أصدقائي",
+    "عندما كنت طفلاً، فمن النادر أن يسرني التظاهر في اللعب",
+    "أميل للافتراض ما في الناس من الأفضل",
+    "أنا شخص كفء جدًا",
+    "حدث لي أن كنت محبوبًا ومملوءًا بالحقد",
+    "تشعرني الاجتماعات التي تحتوي عددًا كبيرًا من الناس بالملل",
+    "في بعض الأحيان عندما أقرأ الشعر أو أشاهد عملًا فنيًا أشعر بالقشعريرة",
+    "أفعل أحيانًا للناس ما أريده عن طريق تهديدهم أو إغرائهم",
+    "أنا ليس لدي الهوس في النظافة",
+    "أحيانًا تبدو الأمور قاتمة وميؤوس منها",
+    "في الحوار لدي ميل للحديث أكثر من الآخرين",
+    "أجد من السهل أن أكون متعاطفًا، بمعنى أستطيع الشعور بما يشعر به الآخرون",
+    "أعتبر نفسي شخصًا غير أناني",
+    "ما أقوم به، أحاول القيام به بعناية",
+    "إذا قلت أو فعلت شيئًا خاطئًا لشخص ما فإنني أكاد لا أتحمل النظر إليه مباشرة من جديد",
+    "نمط حياتي سريع",
+    "في الإجازة أفضل العودة إلى مكان أعرفه جيدًا بدلًا من أن أذهب إلى مكان جديد",
+    "أنا صارم وغير مرن",
+    "أسعى إلى التميّز في كل ما أقوم به",
+    "في بعض الأحيان في لحظة اندفاع أقوم بأشياء أندم عليها لاحقًا",
+    "أنجذب إلى الألوان الزاهية والأساليب الملفتة",
+    "لدي الكثير من الفضول الفكري",
+    "أفضل مدح الآخرين بدلًا من الحصول على مدحهم",
+    "هناك الكثير من الأعمال الصغيرة التي يجب القيام بها، أحيانا بكل بساطة أقوم بتجاهلها كلها",
+    "عندما يبدو أن كل شيء على غير ما يرام، أبقى قادرًا على اتخاذ القرارات الصائبة",
+    "نادرا ما أستخدم كلمات مثل مذهل أو مثير من أجل وصف ما يحدث لي",
+    "أعتقد أنّه إذا كان الناس لا يعرفون بماذا يؤمنون عندما يبلغون الخامسة والعشرين، فهناك شيء غير سليم عندهم",
+    "أشفق على أولئك الذين هم أقل حظًا مني",
+    "عندما أذهب في رحلة، أحضر مسبقًا برنامجًا دقيقًا",
+    "تخطر أحيانًا في ذهني أفكار مرعبة",
+    "أهتم حقًا بالأشخاص الذين أعمل معهم",
+    "أجد صعوبة في ترك ذهني يطوف (يجول) بدون رقابة أو تسير",
+    "لدي ثقة كبيرة في طبيعة البشر",
+    "أنا فعال ومنتج في عملي",
+    "بالنسبة لي، حتى اإلزعاجات البسيطة يمكن أن تكون سبب الاستثارة",
+    "أحب الحفلات المليئة بالأشخاص",
+    "أحب قراءة الشعر الذي يركز على المشاعر والصور بدلًا من الذي يركز على سيرورة التاريخ",
+    "أفتخر بالمهارة التي أتعامل بها مع الناس",
+    "لا أقضي وقتًا طويلاً في البحث على الأشياء التي وضعتها في غير محلها",
+    "في كثير من الأحيان عندما تسوء الأمور أفشل وتكون لدي الرغبة في الانسحاب",
+    "لا أجد من السهل التحكم في الوضعيات (التحكم في زمام الأمور)",
+    "أشياء غريبة (مثل بعض الروائح أو أسماء بعض الأماكن) يمكن أن تثير عواطفي",
+    "إذا استطعت، سأبذل جهدا من أجل مساعدة الآخرين",
+    "يجب أن أكون حقًا مريضًا لأغيب يومًا عن العمل",
+    "عندما يقوم الأشخاص الذين أعرفهم بأشياء سخيفة، أشعر بالحرج من أجلهم",
+    "أنا شخص نشط جدًا",
+    "أتخذ دائمًا نفس الطريق عندما أذهب لمكان ما",
+    "أدخل غالبًا في خلافات مع عائلتي وزملائي في العمل",
+    "أنشغل بالعمل إلى حدّ إهمال الأسرة والأصدقاء والراحة",
+    "أنا دائمًا قادر على التحكم في مشاعري",
+    "أحب أن أكون جزءًا من الحشد في الأحداث الرياضية",
+    "لدي مجموعة متنوعة واسعة من المنافع الفكرية",
+    "أنا شخص ذو مكانة عالية",
+    "لدي الكثير من الانضباط الذاتي",
+    "أنا مستقر عاطفيًا بما فيه الكفاية",
+    "أنا أضحك بسهولة",
+    "أظن أن المبادئ الأخلاقية الجديدة التي تقوم على أساس التساهل، لا تعتبر إطلاقًا من الأخلاق",
+    "أفضل أن تكون لدي القدرة على التسامح على أن أكون عادلاً",
+    "أفكر كثيرًا قبل الإجابة على سؤال ما"
+]
+
 responses = []  # Liste pour enregistrer les réponses
 current_proposition = 0  # Indice de la proposition actuelle
+selected_language = "FR"  # Langue sélectionnée par défaut
 
 # Variables pour les informations personnelles
 nom = tk.StringVar()
 prenom = tk.StringVar()
 age = tk.StringVar()
 sexe = tk.StringVar()
+
+# Dictionnaires pour les textes de l'interface selon la langue
+texts = {
+    "FR": {
+        "welcome": "Bienvenue au test de personnalité",
+        "description": "Ce test va vous permettre de mieux comprendre votre personnalité.\nVous allez répondre à plusieurs propositions en indiquant votre degré d'accord sur une échelle de 1 à 5.",
+        "language_choice": "Choisissez votre langue / اختر لغتك:",
+        "french": "Français",
+        "arabic": "العربية",
+        "continue": "Continuer",
+        "personal_info": "Veuillez entrer vos informations personnelles",
+        "name": "Nom :",
+        "firstname": "Prénom :",
+        "age": "Âge :",
+        "gender": "Sexe :",
+        "male": "Homme",
+        "female": "Femme",
+        "fill_all_fields": "Veuillez remplir tous les champs avant de continuer.",
+        "age_error": "L'âge doit être un nombre.",
+        "name_error": "Le nom ne peut contenir que des CHOIX_REPs et des tirets.",
+        "firstname_error": "Le prénom ne peut contenir que des CHOIX_REPs et des tirets.",
+        "explanation_title": "Chaque proposition vous demande de donner votre avis sur une échelle de 1 à 5 :",
+        "scale_1": "1 - Pas du tout d'accord",
+        "scale_2": "2 - Pas d'accord", 
+        "scale_3": "3 - Neutre",
+        "scale_4": "4 - D'accord",
+        "scale_5": "5 - Tout à fait d'accord",
+        "start_test": "Commencer le test",
+        "proposition": "Proposition",
+        "option_1": "Pas du tout d'accord",
+        "option_2": "Pas d'accord",
+        "option_3": "Neutre",
+        "option_4": "D'accord",
+        "option_5": "Tout à fait d'accord",
+        "next_proposition": "Proposition Suivante",
+        "select_option": "Veuillez sélectionner une option avant de continuer.",
+        "test_complete": "Merci d'avoir complété le test !",
+        "show_report": "Afficher le rapport"
+    },
+    "AR": {
+        "welcome": "مرحبا بكم في اختبار الشخصية",
+        "description": "سيساعدك هذا الاختبار على فهم شخصيتك بشكل أفضل.\nستجيب على عدة عبارات بتحديد درجة موافقتك على مقياس من 1 إلى 5.",
+        "language_choice": "Choisissez votre langue / اختر لغتك:",
+        "french": "Français",
+        "arabic": "العربية",
+        "continue": "متابعة",
+        "personal_info": "الرجاء إدخال معلوماتك الشخصية",
+        "name": "اللقب :",
+        "firstname": "الاسم  :",
+        "age": "العمر :",
+        "gender": "الجنس :",
+        "male": "ذكر",
+        "female": "أنثى",
+        "fill_all_fields": "يرجى ملء جميع الحقول قبل المتابعة.",
+        "age_error": "يجب أن يكون العمر رقماً.",
+        "name_error": "لا يمكن أن يحتوي اللقب إلا على أحرف .",
+        "firstname_error": "لا يمكن أن يحتوي الاسم إلا على أحرف .",
+        "explanation_title": "كل عبارة تطلب منك إعطاء رأيك على مقياس من 1 إلى 5 :",
+        "scale_1": "1 - غير موافق إطلاقاً",
+        "scale_2": "2 - غير موافق",
+        "scale_3": "3 - حيادي",
+        "scale_4": "4 - موافق",
+        "scale_5": "5 - موافق تماماً",
+        "start_test": "بدء الاختبار",
+        "proposition": "العبارة",
+        "option_1": "غير موافق إطلاقاً",
+        "option_2": "غير موافق",
+        "option_3": "حيادي",
+        "option_4": "موافق",
+        "option_5": "موافق تماماً",
+        "next_proposition": "العبارة التالية",
+        "select_option": "يرجى اختيار خيار قبل المتابعة.",
+        "test_complete": "شكراً لك لإكمال الاختبار!",
+        "show_report": "عرض التقرير"
+    }
+}
 
 # Fonction pour nettoyer la fenêtre
 def clear_window():
@@ -296,17 +618,43 @@ def clear_window():
 def introduction_screen():
     clear_window()
 
-    label_intro = tk.Label(root, text="Bienvenue au test de personnalité", font=("Helvetica", 18), padx=20, pady=80)
+    # Titre de bienvenue
+    label_intro = tk.Label(root, text=texts[selected_language]["welcome"], font=("Helvetica", 18), padx=20, pady=30)
     label_intro.pack()
 
-    label_description = tk.Label(root, text="Ce test va vous permettre de mieux comprendre votre personnalité.\n"
-                                            "Vous allez répondre à plusieurs propositions en indiquant votre degré d'accord "
-                                            "sur une échelle de 1 à 5.", font=("Helvetica", 12), padx=20, pady=20)
+    # Description
+    label_description = tk.Label(root, text=texts[selected_language]["description"], font=("Helvetica", 12), padx=20, pady=20)
     label_description.pack()
 
-    button_continue = ttk.Button(root, text="Continuer", command=formulaire_screen, width=20)
-    button_continue.pack(side=tk.BOTTOM, pady=20)  # Le bouton est aligné en bas
+    # Cadre pour le choix de langue
+    language_frame = tk.Frame(root)
+    language_frame.pack(pady=30)
+    
+    # Label pour le choix de langue
+    label_language = tk.Label(language_frame, text=texts[selected_language]["language_choice"], font=("Helvetica", 14, "bold"))
+    label_language.pack(pady=10)
+    
+    # Variable pour stocker la langue sélectionnée
+    language_var = tk.StringVar(value=selected_language)
+    
+    # Boutons radio pour le choix de langue
+    style = ttk.Style()
+    style.configure("TRadiobutton", font=("Helvetica", 12))
+    
+    radio_french = ttk.Radiobutton(language_frame, text=texts["FR"]["french"], variable=language_var, value="FR", style="TRadiobutton")
+    radio_french.pack(pady=5)
+    
+    radio_arabic = ttk.Radiobutton(language_frame, text=texts["AR"]["arabic"], variable=language_var, value="AR", style="TRadiobutton")
+    radio_arabic.pack(pady=5)
 
+    # Bouton continuer
+    button_continue = ttk.Button(root, text=texts[selected_language]["continue"], command=lambda: set_language_and_continue(language_var.get()), width=20)
+    button_continue.pack(side=tk.BOTTOM, pady=20)
+
+def set_language_and_continue(selected_lang):
+    global selected_language
+    selected_language = selected_lang
+    formulaire_screen()
 
 def formulaire_screen():
     clear_window()
@@ -317,29 +665,29 @@ def formulaire_screen():
     main_frame.pack(expand=True)  # Centre le cadre principal dans la fenêtre
 
     # Titre
-    label_info = tk.Label(main_frame, text="Veuillez entrer vos informations personnelles", font=("Helvetica", 16, "bold"))
+    label_info = tk.Label(main_frame, text=texts[selected_language]["personal_info"], font=("Helvetica", 16, "bold"))
     label_info.grid(row=0, column=0, columnspan=2, pady=(0, 20))
 
     # Champ "Nom"
-    label_nom = ttk.Label(main_frame, text="Nom :", font=("Helvetica", 12))
+    label_nom = ttk.Label(main_frame, text=texts[selected_language]["name"], font=("Helvetica", 12))
     label_nom.grid(row=1, column=0, sticky="e", padx=(0, 10), pady=5)
     entry_nom = ttk.Entry(main_frame, textvariable=nom, font=("Helvetica", 12), width=20)  # Réduit la largeur
     entry_nom.grid(row=1, column=1, pady=5, sticky="w")
 
     # Champ "Prénom"
-    label_prenom = ttk.Label(main_frame, text="Prénom :", font=("Helvetica", 12))
+    label_prenom = ttk.Label(main_frame, text=texts[selected_language]["firstname"], font=("Helvetica", 12))
     label_prenom.grid(row=2, column=0, sticky="e", padx=(0, 10), pady=5)
     entry_prenom = ttk.Entry(main_frame, textvariable=prenom, font=("Helvetica", 12), width=20)  # Réduit la largeur
     entry_prenom.grid(row=2, column=1, pady=5, sticky="w")
 
     # Champ "Âge"
-    label_age = ttk.Label(main_frame, text="Âge :", font=("Helvetica", 12))
+    label_age = ttk.Label(main_frame, text=texts[selected_language]["age"], font=("Helvetica", 12))
     label_age.grid(row=3, column=0, sticky="e", padx=(0, 10), pady=5)
     entry_age = ttk.Entry(main_frame, textvariable=age, font=("Helvetica", 12), width=20)  # Réduit la largeur
     entry_age.grid(row=3, column=1, pady=5, sticky="w")
 
     # Champ "Sexe" avec boutons radio
-    label_sexe = ttk.Label(main_frame, text="Sexe :", font=("Helvetica", 12))
+    label_sexe = ttk.Label(main_frame, text=texts[selected_language]["gender"], font=("Helvetica", 12))
     label_sexe.grid(row=4, column=0, sticky="e", padx=(0, 10), pady=(15, 5))
 
     frame_sexe = tk.Frame(main_frame)
@@ -349,21 +697,21 @@ def formulaire_screen():
     style = ttk.Style()
     style.configure("TRadiobutton", font=("Helvetica", 12))
 
-    bouton_homme = ttk.Radiobutton(frame_sexe, text="Homme", variable=sexe, value="H", style="TRadiobutton")
+    bouton_homme = ttk.Radiobutton(frame_sexe, text=texts[selected_language]["male"], variable=sexe, value="H", style="TRadiobutton")
     bouton_homme.pack(side=tk.LEFT, padx=10)
 
-    bouton_femme = ttk.Radiobutton(frame_sexe, text="Femme", variable=sexe, value="F", style="TRadiobutton")
+    bouton_femme = ttk.Radiobutton(frame_sexe, text=texts[selected_language]["female"], variable=sexe, value="F", style="TRadiobutton")
     bouton_femme.pack(side=tk.LEFT, padx=10)
 
     # Bouton "Continuer" en bas, centré
-    button_continue = ttk.Button(main_frame, text="Continuer", command=check_formulaire, width=20)
+    button_continue = ttk.Button(main_frame, text=texts[selected_language]["continue"], command=check_formulaire, width=20)
     button_continue.grid(row=5, column=0, columnspan=2, pady=(20, 0))
 
 # Vérifier si les champs du formulaire sont remplis avant de continuer
 def check_formulaire():
     # Vérification des champs vides
     if not nom.get() or not prenom.get() or not age.get() or not sexe.get():
-        label_warning = tk.Label(root, text="Veuillez remplir tous les champs avant de continuer.", fg="red", pady=10, padx=20)
+        label_warning = tk.Label(root, text=texts[selected_language]["fill_all_fields"], fg="red", pady=10, padx=20)
         label_warning.pack()
         return
 
@@ -373,19 +721,19 @@ def check_formulaire():
         if age_value < 0 or age_value > 99:
             raise ValueError
     except ValueError:
-        label_warning = tk.Label(root, text="L'âge doit être un nombre .", fg="red", pady=10, padx=20)
+        label_warning = tk.Label(root, text=texts[selected_language]["age_error"], fg="red", pady=10, padx=20)
         label_warning.pack()
         return
 
     # Vérification du nom
     if not re.match("^[A-Za-zÀ-ÿ '-]+$", nom.get()):
-        label_warning = tk.Label(root, text="Le nom ne peut contenir que des lettres et des tirets.", fg="red", pady=10, padx=20)
+        label_warning = tk.Label(root, text=texts[selected_language]["name_error"], fg="red", pady=10, padx=20)
         label_warning.pack()
         return
 
     # Vérification du prénom
     if not re.match("^[A-Za-zÀ-ÿ '-]+$", prenom.get()):
-        label_warning = tk.Label(root, text="Le prénom ne peut contenir que des lettres et des tirets.", fg="red", pady=10, padx=20)
+        label_warning = tk.Label(root, text=texts[selected_language]["firstname_error"], fg="red", pady=10, padx=20)
         label_warning.pack()
         return
 
@@ -395,15 +743,17 @@ def check_formulaire():
 def explanation_screen():
     clear_window()
 
-    label_explanation = tk.Label(root, text="Chaque proposition vous demande de donner votre avis sur une échelle de 1 à 5 :\n\n\n"
-                                            "1 - Pas du tout d'accord\n\n"
-                                            "2 - Pas d'accord\n\n"
-                                            "3 - Neutre\n\n"
-                                            "4 - D'accord\n\n"
-                                            "5 - Tout à fait d'accord", font=("Helvetica", 12), padx=20, pady=120)
+    explanation_text = f"{texts[selected_language]['explanation_title']}\n\n\n" \
+                      f"{texts[selected_language]['scale_1']}\n\n" \
+                      f"{texts[selected_language]['scale_2']}\n\n" \
+                      f"{texts[selected_language]['scale_3']}\n\n" \
+                      f"{texts[selected_language]['scale_4']}\n\n" \
+                      f"{texts[selected_language]['scale_5']}"
+
+    label_explanation = tk.Label(root, text=explanation_text, font=("Helvetica", 12), padx=20, pady=120)
     label_explanation.pack()
 
-    button_start = ttk.Button(root, text="Commencer le test", command=start_test, width=20)
+    button_start = ttk.Button(root, text=texts[selected_language]["start_test"], command=start_test, width=20)
     button_start.pack(side=tk.BOTTOM, pady=20)  # Bouton aligné en bas
 
 # Démarrage du test
@@ -417,8 +767,12 @@ def start_test():
 def show_proposition():
     clear_window()
 
+    # Choisir la liste de propositions selon la langue
+    propositions = propositionsFR if selected_language == "FR" else propositionsAR
+
     if current_proposition < len(propositions):
-        label_proposition = tk.Label(root, text=f"Proposition {current_proposition + 1}: {propositions[current_proposition]}", font=("Helvetica", 14), wraplength=800, padx=50, pady=120)
+        proposition_text = f"{texts[selected_language]['proposition']} {current_proposition + 1}: {propositions[current_proposition]}"
+        label_proposition = tk.Label(root, text=proposition_text, font=("Helvetica", 14), wraplength=800, padx=50, pady=120)
         label_proposition.pack()
 
         # Variable pour enregistrer la sélection de l'utilisateur
@@ -428,8 +782,15 @@ def show_proposition():
         frame_radio = tk.Frame(root)
         frame_radio.pack(pady=20)
 
-        # Liste des textes pour les boutons radio
-        options = ["Pas du tout d'accord", "Pas d'accord", "Neutre", "D'accord", "Tout à fait d'accord"]
+        # Liste des textes pour les boutons radio selon la langue
+        options = [
+            texts[selected_language]["option_1"],
+            texts[selected_language]["option_2"],
+            texts[selected_language]["option_3"],
+            texts[selected_language]["option_4"],
+            texts[selected_language]["option_5"]
+        ]
+        
         # Créer les boutons radio avec ttk pour un style amélioré
         style = ttk.Style()
         style.configure("TRadiobutton", font=("Helvetica", 12))  # Taille de police personnalisée
@@ -438,7 +799,7 @@ def show_proposition():
             radio_button = ttk.Radiobutton(frame_radio, text=text, variable=selected_value, value=i, style="TRadiobutton")
             radio_button.pack(side=tk.LEFT, padx=20)  # `side=tk.LEFT` pour alignement horizontal
 
-        button_next = ttk.Button(root, text="Proposition Suivante", command=lambda: next_proposition(selected_value), width=20)
+        button_next = ttk.Button(root, text=texts[selected_language]["next_proposition"], command=lambda: next_proposition(selected_value), width=20)
         button_next.pack(side=tk.BOTTOM, pady=20)  # Bouton aligné en bas
 
     else:
@@ -450,20 +811,21 @@ def next_proposition(selected_value):
     response = selected_value.get()
     if response != 0:
         responses.append(response)
+        print(f"Réponse enregistrée pour la proposition {current_proposition + 1}: {response}")
         current_proposition += 1
         show_proposition()
     else:
-        label_warning = tk.Label(root, text="Veuillez sélectionner une option avant de continuer.", fg="red", pady=10, padx=20)
+        label_warning = tk.Label(root, text=texts[selected_language]["select_option"], fg="red", pady=10, padx=20)
         label_warning.pack()
 
 # Fin du test
 def end_test():
     clear_window()
 
-    label_end = tk.Label(root, text="Merci d'avoir complété le test !", font=("Helvetica", 16), padx=20, pady=220)
+    label_end = tk.Label(root, text=texts[selected_language]["test_complete"], font=("Helvetica", 16), padx=20, pady=220)
     label_end.pack()
 
-    button_report = ttk.Button(root, text="Afficher le rapport", command=show_report, width=20)
+    button_report = ttk.Button(root, text=texts[selected_language]["show_report"], command=show_report, width=20)
     #button_report = ttk.Button(root, text="Afficher le rapport",  width=20)
     button_report.pack(side=tk.BOTTOM, pady=20)  # Bouton aligné en bas
 
@@ -1105,214 +1467,217 @@ def calcul():
   #Nevrosite
   #tres faible
   if( 20<=NEV<=33) :
-    text_N="Cette personne est généralement stable émotionnellement, peu encline aux émotions négatives,calme,confianteet en contrôle d'elle-même"
+    text_N="La personne présente une bonne régulation émotionnelle, fait preuve de sérénité, de confiance en soi et d'une capacité à gérer efficacement le stress et les émotions négatives."
 
   #faible
   elif(34<=NEV<=44):
-    text_N="Cette personne est généralement stable émotionnellement, peu encline aux émotions négatives,calme,confianteet en contrôle d'elle-même"
+    text_N="La personne présente une bonne régulation émotionnelle, fait preuve de sérénité, de confiance en soi et d'une capacité à gérer efficacement le stress et les émotions négatives."
 
   #moyen
   elif(45<=NEV<=55):
-    text_N="Cette personne se situe globalement dans la moyen quant a sa gestion de stress "
+    text_N=": La personne démontre une capacité de gestion du stress qui se situe globalement dans la moyenne."
 
   #eleve
   elif(56<=NEV<=64):
-    text_N="Cette personne est généralement tendance à expérimenter des affects négatifs comme -la peur, la colére,tristesse, le dégout,….-sont moins capables de contrôle leurs pulsions, et ont tendance à moins bien faire face au stress."
+    text_N="La personne manifeste une tendance à ressentir plus fréquemment des émotions négatives telles que la peur, la colère ou la tristesse, et peut rencontrer des difficultés à maîtriser ses réactions émotionnelles ainsi qu'à gérer efficacement le stress dans certaines situations."
 
   #tres eleve
   elif(65<=NEV<=80):
-    text_N="Cette personne est généralement tendance à expérimenter des affects négatifs comme -la peur, la colére,tristesse, le dégout,….-sont moins capables de contrôle leurs pulsions, et ont tendance à moins bien faire face au stress."
+    text_N="La personne manifeste une tendance à ressentir plus fréquemment des émotions négatives telles que la peur, la colère ou la tristesse, et peut rencontrer des difficultés à maîtriser ses réactions émotionnelles ainsi qu'à gérer efficacement le stress dans certaines situations."
+
 
   #extraverssion
   #tres faible
   if( 20<=EXT<=33) :
-    text_E="Cette personne est généralement introvertis sont ainsi réservés plutôt qu’inamicaux, indépendants plutôt que grégaires, constants plutôt que léthargiques. Les sujets introvertis peuvent se dire timides quand ils veulent dire qu’ils préfèrent être seuls; ils ne souffrent pas nécessairement d’anxiété sociale. Enfin, bien que n’ayant pas l’exubérance des sujets extravertis, les introvertis ne sont ni malheureux ni pessimistes."
+    text_E="La personne présente un profil plutôt introverti, adoptant une attitude réservée sans pour autant être fermée aux autres. Elle se montre indépendante dans ses interactions sociales et fait preuve de constance dans son comportement. Cette tendance à l’introversion ne traduit ni isolement ni pessimisme, mais reflète une préférence pour la discrétion et les environnements calmes, sans lien nécessaire avec une anxiété sociale."
 
   #faible
   elif(34<=EXT<=44):
-    text_E="Cette personne est généralement introvertis sont ainsi réservés plutôt qu’inamicaux, indépendants plutôt que grégaires, constants plutôt que léthargiques. Les sujets introvertis peuvent se dire timides quand ils veulent dire qu’ils préfèrent être seuls; ils ne souffrent pas nécessairement d’anxiété sociale. Enfin, bien que n’ayant pas l’exubérance des sujets extravertis, les introvertis ne sont ni malheureux ni pessimistes."
+    text_E="La personne présente un profil plutôt introverti, adoptant une attitude réservée sans pour autant être fermée aux autres. Elle se montre indépendante dans ses interactions sociales et fait preuve de constance dans son comportement. Cette tendance à l’introversion ne traduit ni isolement ni pessimisme, mais reflète une préférence pour la discrétion et les environnements calmes, sans lien nécessaire avec une anxiété sociale."
 
   #moyen
   elif(45<=EXT<=55):
-    text_E="Cette personne se situe globalement dans la moyenne quant à son extraversion, sa sociabilité, sa grégarité, sa tendance à s’affirmer et à s’exprimer, l’énergie qu’elle déploie, son besoin de stimulation et son optimisme."
+    text_E="La personne adopte un comportement généralement équilibré sur le plan de l’extraversion, en manifestant une sociabilité, une assertivité, un dynamisme et un optimisme qui s’inscrivent globalement dans la moyenne."
 
   #eleve
   elif(56<=EXT<=64):
-    text_E="Cette personne est généralement  extravertis sont sociables. Appréciant les gens et préférant les groupes importants et les réunions, ils sont également sûrs d’eux, actifs et loquaces. Ils aiment la stimulation et tendent à être joyeux. Ils sont gais, énergiques et optimistes"
+    text_E="La personne présente un profil extraverti, marqué par une aisance en société et une préférence pour les interactions en groupe. Elle se distingue par une attitude dynamique, communicative et confiante, appréciant les environnements stimulants et faisant preuve d’enthousiasme, d’énergie et d’optimisme."
 
   #tres eleve
   elif(65<=EXT<=80):
-    text_E="Cette personne est généralement  extravertis sont sociables. Appréciant les gens et préférant les groupes importants et les réunions, ils sont également sûrs d’eux, actifs et loquaces. Ils aiment la stimulation et tendent à être joyeux. Ils sont gais, énergiques et optimistes"
+    text_E="La personne présente un profil extraverti, marqué par une aisance en société et une préférence pour les interactions en groupe. Elle se distingue par une attitude dynamique, communicative et confiante, appréciant les environnements stimulants et faisant preuve d’enthousiasme, d’énergie et d’optimisme."
 
   #ouverture
   #tres faible
   if( 20<=OUV<=33) :
-    text_O="Cette personne est généralemnt  tendance à être conservateurs et conventionnels dans leurs idées et dans leur comportement. Ils préfèrent les situations qui leur sont familières à la nouveauté et leurs réactions émotives sont émoussées. Il semblerait plutôt que les personnes renfermées aient simplement des champs d’intérêts moins étendus et moins intenses."
+    text_O="La personne évaluée présente généralement une tendance à adopter des idées et des comportements de nature conservatrice et conventionnelle. Elle manifeste une préférence pour les situations familières plutôt que pour la nouveauté, avec des réactions émotionnelles généralement modérées. Ce profil semble également se caractériser par des centres d’intérêt relativement restreints et d’intensité modérée."
 
   #faible
   elif(34<=OUV<=44):
-    text_O="Cette personne est généralemnt  tendance à être conservateurs et conventionnels dans leurs idées et dans leur comportement. Ils préfèrent les situations qui leur sont familières à la nouveauté et leurs réactions émotives sont émoussées. Il semblerait plutôt que les personnes renfermées aient simplement des champs d’intérêts moins étendus et moins intenses."
+    text_O="La personne évaluée présente généralement une tendance à adopter des idées et des comportements de nature conservatrice et conventionnelle. Elle manifeste une préférence pour les situations familières plutôt que pour la nouveauté, avec des réactions émotionnelles généralement modérées. Ce profil semble également se caractériser par des centres d’intérêt relativement restreints et d’intensité modérée."
 
   #moyenne
   elif(45<=OUV<=55):
-    text_O="Cette personne se situe globalement dans la moyenne quant à ses niveaux de curiosité intellectuelle, d’imagination, d’introspection, de créativité, de sens artistique et d’ouverture à la nouveauté et à la diversité."
+    text_O="Le profil évalué reflète une ouverture modérée aux idées nouvelles, faisant preuve d’un niveau moyen de curiosité intellectuelle, d’imagination, de créativité, d’introspection et de sensibilité artistique."
 
   #eleve
   elif(56<=OUV<=64):
-    text_O="Cette personne se situé globalement dans le score élevé à la dimension de l’ouverture ont une imagination active, la sensibilité esthétique, l’attention prêtée à ses propres sentiments, la préférence pour la variété, la curiosité intellectuelle et l’indépendance de jugement. Les sujets ouverts sont curieux de tout ce qui se produit dans leur univers interne et externe et leur vie est plus riche en expériences. Ils sont disposés à concevoir des idées nouvelles et à adopter des valeurs non conventionnelles. Ils vivent plus intensément les émotions positives et négatives que les sujets renfermés"
+    text_O="La personne évaluée présente un score élevé sur la dimension de l’ouverture. Ce profil se caractérise par une imagination vive, une sensibilité esthétique marquée, une attention portée à l’univers intérieur, une curiosité intellectuelle, une préférence pour la diversité, ainsi qu’une indépendance dans les jugements. Les individus ayant ce type de profil sont généralement réceptifs aux idées nouvelles, ouverts à des valeurs non conventionnelles, et recherchent des expériences variées. Ils/elles ont également tendance à vivre les émotions, qu’elles soient positives ou négatives, de manière plus intense que les personnes plus réservées."
 
   #tres eleve
   elif(65<=OUV<=80):
-    text_O="Cette personne se situé globalement dans le score élevé à la dimension de l’ouverture ont une imagination active, la sensibilité esthétique, l’attention prêtée à ses propres sentiments, la préférence pour la variété, la curiosité intellectuelle et l’indépendance de jugement. Les sujets ouverts sont curieux de tout ce qui se produit dans leur univers interne et externe et leur vie est plus riche en expériences. Ils sont disposés à concevoir des idées nouvelles et à adopter des valeurs non conventionnelles. Ils vivent plus intensément les émotions positives et négatives que les sujets renfermés"
+    text_O="La personne évaluée présente un score élevé sur la dimension de l’ouverture. Ce profil se caractérise par une imagination vive, une sensibilité esthétique marquée, une attention portée à l’univers intérieur, une curiosité intellectuelle, une préférence pour la diversité, ainsi qu’une indépendance dans les jugements. Les individus ayant ce type de profil sont généralement réceptifs aux idées nouvelles, ouverts à des valeurs non conventionnelles, et recherchent des expériences variées. Ils/elles ont également tendance à vivre les émotions, qu’elles soient positives ou négatives, de manière plus intense que les personnes plus réservées."
 
   #agreabilite
   #tres faible
   if( 20<=AGR<=33) :
-    text_A="Cette personne est  typiquement désagréables ou antagonistes. Ils sont égocentriques et associés aux personnalités narcissiques, antisociales et paranoïaques."
+    text_A="La personne évaluée peut parfois être perçue comme distante ou peu conciliante dans ses relations interpersonnelles. Ce profil peut refléter une tendance à privilégier ses propres besoins, avec une propension à adopter des attitudes marquées par une certaine méfiance ou un manque de flexibilité sociale."
 
   #faible
   elif(34<=AGR<=44):
-    text_A="Cette personne est  typiquement désagréables ou antagonistes. Ils sont égocentriques et associés aux personnalités narcissiques, antisociales et paranoïaques."
+    text_A="La personne évaluée peut parfois être perçue comme distante ou peu conciliante dans ses relations interpersonnelles. Ce profil peut refléter une tendance à privilégier ses propres besoins, avec une propension à adopter des attitudes marquées par une certaine méfiance ou un manque de flexibilité sociale."
 
   #moyen
   elif(45<=AGR<=55):
-    text_A="Cette personne se situe globalement dans la moyenne concernent cette relation interpersonnelle c’est une personne franche et sincère sa prise de décisions rationnelles fondées sur une logique bien précise"
+    text_A="La personne évaluée adopte généralement une posture équilibrée dans ses relations interpersonnelles. Elle se distingue par sa franchise et sa sincérité, et prend ses décisions de manière réfléchie, en s’appuyant sur une logique claire et rationnelle."
 
   #elve 
   elif(56<=AGR<=64):
-    text_A="Cette personne à tendance à être fondamentalement altruiste, il/elle as tendance à avoir de la sympathie pour les autres et désire de les aider,et croient que les autres personnes seront également aidant en retour"
+    text_A="La personne évaluée présente une disposition marquée à l’altruisme. Elle manifeste de l’empathie envers autrui, se montre volontaire pour apporter son aide, et adopte une attitude généralement confiante quant à la réciprocité dans les relations humaines."
 
   #eleve
   elif(65<=AGR<=80):
-    text_A="Cette personne à tendance à être fondamentalement altruiste, il/elle as tendance à avoir de la sympathie pour les autres et désire de les aider,et croient que les autres personnes seront également aidant en retour"
+    text_A="La personne évaluée présente une disposition marquée à l’altruisme. Elle manifeste de l’empathie envers autrui, se montre volontaire pour apporter son aide, et adopte une attitude généralement confiante quant à la réciprocité dans les relations humaines."
 
   #CONSCIENCE
   #tres faible
   if( 20<=CON<=33):
-    text_C="cette personne est géneralement moins exigeantes dans l'application de principes moraux, et plus laxiste dans la poursuite de leurs objectifs."
+    text_C="La personne évaluée peut faire preuve d’une certaine souplesse dans l’application de principes ou de normes, et adopter une approche moins rigide dans la poursuite de ses objectifs."
 
   #faible
   elif(34<=CON<=44):
-    text_C="cette personne est géneralement moins exigeantes dans l'application de principes moraux, et plus laxiste dans la poursuite de leurs objectifs."
+    text_C="La personne évaluée peut faire preuve d’une certaine souplesse dans l’application de principes ou de normes, et adopter une approche moins rigide dans la poursuite de ses objectifs."
 
   #moyen
   elif(45<=CON<=55):
-    text_C="cette personne est moyennement implique dans la planification,l'organisationet l'exécution des tâches "
+    text_C="La personne évaluée présente un niveau d’implication modéré dans les activités de planification, d’organisation et de mise en œuvre des tâches."
+  
   #eleve
   elif(56<=CON<=64):
-    text_C="cette personne est moyennement implique dans la planification,l'organisationet l'exécution des tâches "
+    text_C="La personne évaluée démontre une implication notable dans la planification, l’organisation et l’exécution des tâches. Ce niveau de conscience élevé constitue généralement un atout favorable à la réussite professionnelle."
+
   #tres eleve
   elif(65<=CON<=80):
-    text_C="cette personne est moyennement implique dans la planification,l'organisationet l'exécution des tâches "
+    text_C="La personne évaluée démontre une implication notable dans la planification, l’organisation et l’exécution des tâches. Ce niveau de conscience élevé constitue généralement un atout favorable à la réussite professionnelle."
 
 
 
   #menner et decider
   #faible
   if( 20<=MD<=44.99) :
-    text_MD="Cette personne à une faible capacité à exercer du leadership,à prendre contrôle d'une situation ou d'un projet , à initier des actions à donner des directives et à assumer des responsabilités"
+    text_MD="La personne évaluée manifeste une tendance moins marquée à prendre l’initiative, à diriger ou à encadrer dans le cadre d’un projet ou d’une situation. Elle semble également adopter une posture plus réservée lorsqu’il s’agit d’assumer des responsabilités ou de formuler des directives."
 
   #moyen
   elif(45<=MD<=55.99):
-    text_MD="Cette personne à une capacité moyenne à exercer du leadership,à prendre contrôle d'une situation ou d'un projet , à initier des actions à donner des directives et à assumer des responsabilités"
+    text_MD="La personne évaluée présente une capacité modérée à exercer un rôle de leadership, à initier des actions, à orienter un projet ou une situation, à formuler des directives et à assumer des responsabilités."
 
   #eleve
   elif(56<=MD<=80):
-    text_MD="Cette personne a probablement une bonne capacité à exercer du leadership, à prendre contrôle d’une situation ou d’un projet, à initier des actions, à donner des directives et à assumer des responsabilités"
+    text_MD="La personne évaluée semble disposer d’une bonne capacité à exercer un rôle de leadership, à prendre l’initiative, à orienter l’action, à encadrer les autres et à assumer des responsabilités dans le cadre de projets ou de situations variées."
 
   #soutnir et cooperer
   #faible
   if( 20<=SC<=44.99) :
-    text_SC="Cette personne a tendance à préconiser une approche des relations de travail axée davantage sur la compétition que sur la coopération. Bien qu’elle ne soit pas fermée à l’entraide et à la collaboration, elle a plutôt tendance à penser que chacun doit d’abord s’aider soi-même. Pour elle, le respect doit être mérité et elle pourra contester lorsqu’elle est en désaccord."
+    text_SC="La personne évaluée adopte une approche des relations de travail orientée vers l’autonomie et la performance individuelle, tout en restant ouverte à la collaboration lorsque cela est nécessaire. Elle accorde de l’importance au mérite et n’hésite pas à exprimer ses points de vue de manière directe, notamment en cas de désaccord."
 
   #moyen
   elif(45<=SC<=55.99):
-    text_SC="Cette personne interagit avec ses collègues, ses patrons et les clients de manière positive et avec respect dans la mesure où ces attitudes sont réciproques.Elle est prête à offrir du soutien à ses collégues.Elle pourra se montrer moins collaborative, démocratique et sympathique losque la dynamique d'équipe de travail n'est pas axée sue ces valeurs"
+    text_SC="La personne évaluée adopte une attitude généralement positive et respectueuse dans ses interactions avec les collègues, les supérieurs et les clients, particulièrement lorsque ces attitudes sont partagées. Elle se montre disposée à apporter son soutien au sein de l’équipe, mais peut-être moins encline à la collaboration ou à la participation collective si l’environnement de travail ne reflète pas ces mêmes valeurs."
 
   #eleve
   elif(56<=SC<=80):
-    text_SC="Cette personne démontre de solides compétences en matière de soutien et de coopération. Elle est souvent prête à aider les autres et à travailler en équipe pour atteindre les objectifs communs."
+    text_SC="La personne évaluée fait preuve d’une forte disposition à la collaboration et au soutien, en se montrant volontiers disponible pour aider autrui et contribuer activement au travail d’équipe en vue d’atteindre des objectifs partagés."
+
 
 
   #interagire et cooperer
   #faible
   if( 20<=IC<=44.99) :
-    text_IC="Cette personne à une faible capacité entre en relation avec autrui;à développer une réseau de contacts,ainsi qu'à influencer et à persuader .manque de confiance en soi leur de recontrer de nouvelle personne ,elle trouve des défficultées à s'intégrer dans le groupe,de s'exprimer et de faire valoir son point de vue."
+    text_IC="La personne évaluée semble moins à l’aise dans les interactions sociales, notamment lorsqu’il s’agit d’établir de nouveaux contacts, de s’exprimer en groupe ou de défendre ses idées. Elle peut éprouver des difficultés à s’intégrer spontanément dans un collectif et à adopter une posture d’influence ou de persuasion."
 
   #moyen
   elif(45<=IC<=55.99):
-    text_IC="Cette personne ne se démarque pas de la moyenne quant à sa capacité à entrer en relation avec autrui, à développer un réseau de contacts, ainsi qu’à influencer et à persuader. Son niveau de confiance en elle se situe globalement dans la moyenne lorsqu’il s’agit de rencontrer de nouvelles personnes, d’interagir dans un groupe, de s’exprimer et de faire valoir son point de vue."
+    text_IC="La personne évaluée présente une aisance relationnelle modérée, avec une capacité moyenne à établir des contacts, à développer son réseau et à exercer de l’influence. Son niveau de confiance en soi se situe globalement dans la moyenne lorsqu’il s’agit d’interagir en groupe, de communiquer ses idées et de défendre son point de vue."
 
   #eleve
   elif(56<=IC<=80):
-    text_IC="Cette personne à une grand capacité entrer en relation avec autrui, à développer un réseau de contacts, ainsi qu’à influencer et à persuader. Son niveau de confiance en elle est elevé lorsqu’il s’agit de rencontrer de nouvelles personnes, d’interagir dans un groupe, de s’exprimer et de faire valoir son point de vue."
-
+    text_IC="La personne évaluée dispose d’une forte aisance relationnelle, lui permettant de créer et d’entretenir un réseau de contacts, ainsi que d’exercer une influence positive et de convaincre. Elle fait preuve d’une confiance marquée dans les interactions sociales, que ce soit pour rencontrer de nouvelles personnes, s’exprimer en groupe ou défendre son point de vue."
 
   #analyser et interpreter
   #faible
   if( 20<=AI<=44.99) :
-    text_AI="Cette personne préfère les tâches et les problème simples plutôt que les tâches et problème compléxes requérant un travail d'analyse important.Elle pourra avoir de la difficulté a s'adapter à la nouveauté, tel que les évolutions technologiques, elle préfère le plus souvent s'en tenir aux choses connues et qui ont fait leur preuves."
+    text_AI="La personne évaluée manifeste une préférence pour les tâches concrètes et familières, et peut se montrer moins à l’aise face à des situations complexes nécessitant une analyse approfondie. Elle semble également plus encline à adopter des approches éprouvées, avec une certaine réserve vis-à-vis des changements ou des évolutions technologiques."
 
   #moyen
   elif(45<=AI<=55.99):
-    text_AI="Cette personne se situe dans la moyenne des gens quant à sa tendance à déployer une pensée analytique et à son aisance à travailler avec des problèmes et des idées complexes. Son ouverture face à la nouveauté, tel que les évolutions technologiques, et sa capacité à s’y adapter, se situent dans la moyenne."
+    text_AI="La personne évaluée présente un niveau moyen de pensée analytique et de confort dans le traitement de problématiques ou d’idées complexes. Son ouverture à la nouveauté, notamment aux évolutions technologiques, ainsi que sa capacité d’adaptation, se situent également dans la moyenne."
 
   #eleve
   elif(56<=AI<=80):
-    text_AI="Cette personne préfère les tâche et  les problème compléxes requérant un travail d'analyse important plutôt que les tâches simple.Elle s'adapte facilement à la nouveauté, tel que les évolutions technologiques."
+    text_AI="La personne évaluée montre une préférence pour les tâches complexes impliquant une analyse approfondie, plutôt que pour des activités routinières. Elle fait également preuve d’une bonne capacité d’adaptation face à la nouveauté, notamment en ce qui concerne les évolutions technologiques."
 
 
   #creer et conceptualiser
   #faible
   if( 20<=CC<=44.99) :
-    text_CC="Cette personne est plus à l'aise dans les tâches et les situations concrétes et qui lui sont connues que dans celles nécessitant de l'innovation et de la créativité.Elle préfére généralement s'en tenir à ce qu'elle connait plutôt que d'avoir à apprendre de nouvelle choses.Elle peut  accueillir certains changements organisationnels avec réticence et elle n'a pas tendance à initier des chagements."
+    text_CC="La personne évaluée montre une préférence pour les tâches concrètes et les environnements familiers, et s’appuie davantage sur des approches connues que sur l’exploration de nouvelles idées. Elle peut faire preuve de réserve face aux changements organisationnels et adopte une posture plus prudente lorsqu’il s’agit d’initier des transformations."
 
   #moyen
   elif(45<=CC<=55.99):
-    text_CC="La personne présente une capacité moyenne à créer et conceptualiser. Elle a une approche plus pragmatique et se concentre souvent sur des solutions pratiques plutôt que sur des idées innovantes"
+    text_CC="La personne évaluée présente une capacité moyenne en matière de conceptualisation et de création. Son approche est principalement orientée vers le pragmatisme, avec une préférence pour les solutions concrètes plutôt que pour les approches innovantes."
 
   #eleve
   elif(56<=CC<=80):
-    text_CC="Cette personne est susceptible de bien performer dans les tâches et les situations qui nécessitent de l’ouverture aux nouvelles idées et aux nouvelles expériences. Elle peut faire preuve d’innovation et de créativité dans la gestion des problèmes et dans différentes situations. Elle recherche les occasions d’apprentissage et de développement. Elle est généralement favorable aux changements organisationnels et peut être un moteur de changement."
+    text_CC="La personne évaluée est susceptible de bien réussir dans des contextes demandant ouverture aux idées nouvelles et aux expériences variées. Elle peut faire preuve d’innovation et de créativité dans la résolution de problèmes, tout en adoptant une attitude proactive face aux opportunités d’apprentissage et de développement. Réceptive au changement, elle est également en mesure de contribuer activement à sa mise en œuvre au sein de l’organisation."
 
   #organiser et executer
   #faible
   if( 20<=OE<=44.99) :
-    text_OE="Cette personne peut rencontrer des difficultés dans ces domaines et avoir besoin de soutien et de développement pour améliorer ses compétance organisationnelles et d'exécution."
+    text_OE="La personne évaluée pourrait rencontrer certains défis en matière d’organisation et d’exécution, et gagnerait à bénéficier d’un accompagnement ou d’opportunités de développement pour renforcer ses compétences dans ces domaines."
 
   #moyen
   elif(45<=OE<=55.99):
-    text_OE="Cette personne se trouve dans la moyenne des gens quant à sa tendance à planifier à l’avance, à travailler de manière systématique et organisée, ainsi qu’à suivre les directives et les procédures"
+    text_OE="La personne évaluée adopte généralement une approche équilibrée en matière de planification, d’organisation du travail et de respect des consignes et procédures. Son fonctionnement reflète une rigueur modérée, sans excès de rigidité ni manque de structure."
 
   #eleve
   elif(56<=OE<=80):
-    text_OE="Cette personne est souvent afficaces dans leur gestion du temps,capable de prioriser leur tâches et de bien mener leurs projets .elle ont tendance a être fiables et à respecter les délais . Leur approche méthodique et leur capacité à s'organiser leur permettet de gérer efficacement les différentes exigences et réponsabilité qui leur sont confiées."
+    text_OE="La personne évaluée fait preuve d’efficacité dans la gestion du temps, avec une bonne capacité à hiérarchiser les priorités et à mener les projets à terme. Elle se distingue par sa fiabilité, le respect des délais, ainsi qu’une approche méthodique qui lui permet de gérer de manière organisée les différentes responsabilités qui lui sont confiées."
 
-  #adapter et gerer la pression
+  #s'adapter et gerer la pression
   #faible 
   if( 20<=AG<=44.99) :
-    text_AG="Cettel personne à une faible capacité à gérer la pression, ainsi qu'à s'adapter et à faire face aux reverset aux échec;peut recontrer des difficultes dans ces domains et avoir besoin de soutien et de développement pour améliorer ses compétences d'adaptation et de gestion du stress"
+    text_AG="La personne évaluée peut rencontrer certaines limites dans sa capacité à gérer la pression, à s’adapter aux changements ou à faire face aux situations d’échec. Un accompagnement ciblé pourrait contribuer à renforcer ses compétences en matière de gestion du stress et d’adaptation."
 
   #moyen
   elif(45<=AG<=55.99):
-    text_AG="Cette personne est dans la moyenne quant à sa capacité à gérer la pression, ainsi qu’à s’adapter et à faire face aux revers et aux échecs. Il peut lui arriver de se sentir dépassée par les événements."
+    text_AG="La personne évaluée fait preuve d’une aptitude modérée à gérer la pression et à s’adapter aux imprévus ou aux échecs. Dans certaines circonstances, elle peut néanmoins éprouver un sentiment de dépassement face à la situation."
 
   #eleve
   elif(56<=AG<=80):
-    text_AG="Cette personne à une bonne capacité à gérer la pression,ainsi qu'à s'adapter et à faire face aux reverset aux échecs .Il est rare qu'elle sesente dépassée par les événements."
+    text_AG="La personne évaluée fait preuve d’une bonne stabilité émotionnelle face aux situations stressantes. Elle s’adapte efficacement aux changements et parvient généralement à surmonter les obstacles sans se laisser déstabiliser."
 
   #entreprendre et performer
   #faible
   if( 20<=EP<=44.99) :
-    text_EP="la personne est incapable d'entreprendre ou de performer.cela indique simplement quelle peut rencontrer des défis dans ces domaines et avoir besoin de soutien et de développement pour renforcer ses compétences et sa confiance en soi."
+    text_EP="La personne évaluée semble faire face à quelques défis en matière de prise d’initiative et de performance. Un soutien adapté pourrait contribuer à renforcer ses compétences dans ces domaines ainsi qu’à développer davantage sa confiance en ses capacités."
 
   #moyen
   elif(45<=EP<=55.99):
-    text_EP="Cette personne n’est pas particulièrement centrée sur les résultats et sur l’atteinte d’objectifs, sans pour autant être négligente ou désengagée. Elle ne se démarque pas de la moyenne quant à sa recherche de performance et de réussite. Les opportunités de développement et d’avancement de carrière peuvent être appréciées mais ne sont pas nécessairement centrales pour elle."
+    text_EP="La personne évaluée adopte une posture équilibrée vis-à-vis des objectifs et des résultats. Sans faire preuve de négligence ou de désengagement, elle ne se distingue pas particulièrement par une recherche active de performance ou de réussite. Les opportunités de développement et d’évolution professionnelle peuvent être perçues positivement, bien qu’elles ne constituent pas nécessairement une priorité centrale pour elle."
 
   #eleve
   elif(56<=EP<=80):
-    text_EP="la personne est exempte de défi ou de domaines d'amélioration cependant cela indique qu'elle possède des traits de personnalité qui sont souvent associés à une forte capacité d'entreprendre et de performer."
+    text_EP="La personne évaluée ne présente pas de points de vigilance particuliers ni de domaines nécessitant une amélioration spécifique. Son profil reflète des caractéristiques de personnalité généralement associées à une bonne capacité d’initiative et de performance"
 
 
   #print(text_N)
@@ -1968,98 +2333,152 @@ def show_report():
         scrollbar.pack(side="right", fill="y")
         canvas.pack(side="left", fill="both", expand=True)
         canvas.configure(yscrollcommand=scrollbar.set)
-
-    score=[
-      ("N",N),
-      ("E",E),
-      ("O",O),
-      ("A",A),
-      ("C",C),
-      ("N1",N1),
-      ("N2",N2),
-      ("N3",N3),
-      ("N4",N4),
-      ("N5",N5),
-      ("N6",N6),
-      ("E1",E1),
-      ("E2",E2),
-      ("E3",E3),
-      ("E4",E4),
-      ("E5",E5),
-      ("E6",E6),
-      ("O1",O1), 
-      ("O2",O2),
-      ("O3",O3),
-      ("O4",O4),
-      ("O5",O5),
-      ("O6",O6),
-      ("A1",A1),
-      ("A2",A2),
-      ("A3",A3),
-      ("A4",A4),
-      ("A5",A5),
-      ("A6",A6),
-      ("C1",C1),
-      ("C2",C2),
-      ("C3",C3),
-      ("C4",C4),
-      ("C5",C5),
-      ("C6",C6),
-      #("TN",TN),
-      #("TE",TE),
-      #("TO",TO),
-      #("TA",TA),
-      #("TC",TC),
-      ("TN1",TN1),
-      ("TN2",TN2),
-      ("TN3",TN3),
-      ("TN4",TN4),
-      ("TN5",TN5),
-      ("TN6",TN6),
-      ("TE1",TE1),
-      ("TE2",TE2),
-      ("TE3",TE3),
-      ("TE4",TE4),
-      ("TE5",TE5),
-      ("TE6",TE6),
-      ("TO1",TO1), 
-      ("TO2",TO2),
-      ("TO3",TO3),
-      ("TO4",TO4),
-      ("TO5",TO5),
-      ("TO6",TO6),
-      ("TA1",TA1),
-      ("TA2",TA2),
-      ("TA3",TA3),
-      ("TA4",TA4),
-      ("TA5",TA5),
-      ("TA6",TA6),
-      ("TC1",TC1),
-      ("TC2",TC2),
-      ("TC3",TC3),
-      ("TC4",TC4),
-      ("TC5",TC5),
-      ("TC6",TC6),
-      ("MENNER ET DÉCIDER", MD),
-      ("SOUTENIR ET COOPÉRER", SC),
-      ("INTERAGIR ET COMMUNIQUER", IC),
-      ("ANALYSER ET INTERPRÉTER", AI),
-      ("CRÉER ET CONCEPTUALISER", CC),
-      ("ORGANISER ET EXÉCUTER", OE),
-      ("ADAPTER ET GÉRER LA PRESSION", AG),
-      ("ENTREPRENDRE ET PERFORMER", EP)
-    ]
-    for label, value in score:
-      frame = tk.Frame(scrollable_frame)
-      frame.pack(fill="x", padx=10, pady=2)
-      tk.Label(frame, text=label, font=('Arial', 10, 'bold')).pack(side="left")
-      tk.Label(frame, text=value, font=('Arial', 10)).pack(side="left")
+    #affichage des different paramettre sur l'interface !
+    #score=[
+    #  ("N",N),
+    #  ("E",E),
+    #  ("O",O),
+    #  ("A",A),
+    #  ("C",C),
+    #  ("N1",N1),
+    #  ("N2",N2),
+    #  ("N3",N3),
+    #  ("N4",N4),
+    #  ("N5",N5),
+    #  ("N6",N6),
+    #  ("E1",E1),
+    #  ("E2",E2),
+    #  ("E3",E3),
+    #  ("E4",E4),
+    #  ("E5",E5),
+    #  ("E6",E6),
+    #  ("O1",O1), 
+    #  ("O2",O2),
+    #  ("O3",O3),
+    #  ("O4",O4),
+    #  ("O5",O5),
+    #  ("O6",O6),
+    #  ("A1",A1),
+    #  ("A2",A2),
+    #  ("A3",A3),
+    #  ("A4",A4),
+    #  ("A5",A5),
+    #  ("A6",A6),
+    #  ("C1",C1),
+    #  ("C2",C2),
+    #  ("C3",C3),
+    #  ("C4",C4),
+    #  ("C5",C5),
+    #  ("C6",C6),
+    #  #("TN",TN),
+    #  #("TE",TE),
+    #  #("TO",TO),
+    #  #("TA",TA),
+    #  #("TC",TC),
+    #  ("TN1",TN1),
+    #  ("TN2",TN2),
+    #  ("TN3",TN3),
+    #  ("TN4",TN4),
+    #  ("TN5",TN5),
+    #  ("TN6",TN6),
+    #  ("TE1",TE1),
+    #  ("TE2",TE2),
+    #  ("TE3",TE3),
+    #  ("TE4",TE4),
+    #  ("TE5",TE5),
+    #  ("TE6",TE6),
+    #  ("TO1",TO1), 
+    #  ("TO2",TO2),
+    #  ("TO3",TO3),
+    #  ("TO4",TO4),
+    #  ("TO5",TO5),
+    #  ("TO6",TO6),
+    #  ("TA1",TA1),
+    #  ("TA2",TA2),
+    #  ("TA3",TA3),
+    #  ("TA4",TA4),
+    #  ("TA5",TA5),
+    #  ("TA6",TA6),
+    #  ("TC1",TC1),
+    #  ("TC2",TC2),
+    #  ("TC3",TC3),
+    #  ("TC4",TC4),
+    #  ("TC5",TC5),
+    #  ("TC6",TC6),
+    #  ("MENNER ET DÉCIDER", MD),
+    #  ("SOUTENIR ET COOPÉRER", SC),
+    #  ("INTERAGIR ET COMMUNIQUER", IC),
+    #  ("ANALYSER ET INTERPRÉTER", AI),
+    #  ("CRÉER ET CONCEPTUALISER", CC),
+    #  ("ORGANISER ET EXÉCUTER", OE),
+    #  ("ADAPTER ET GÉRER LA PRESSION", AG),
+    #  ("ENTREPRENDRE ET PERFORMER", EP)
+    #]
+    #for label, value in score:
+    #  frame = tk.Frame(scrollable_frame)
+    #  frame.pack(fill="x", padx=10, pady=2)
+    #  tk.Label(frame, text=label, font=('Arial', 10, 'bold')).pack(side="left")
+    #  tk.Label(frame, text=value, font=('Arial', 10)).pack(side="left")
 
     # Lier la molette de la souris pour faire défiler
     def on_mouse_wheel(event):
         canvas.yview_scroll(int(-1 * (event.delta / 120)), "units")
 
     canvas.bind_all("<MouseWheel>", on_mouse_wheel)
+
+    # Dictionnaire pour stocker les questions par lettre
+    questions_par_lettre = {"Pas du tout d'accord": [], "Pas d'accord": [], "Neutre": [], "D'accord": [], "Tout à fait d'accord": []}
+
+    for i, reponse in enumerate(responses):
+        if reponse == 1:
+            questions_par_lettre["Pas du tout d'accord"].append(i + 1)
+        elif reponse == 2:
+            questions_par_lettre["Pas d'accord"].append(i + 1)
+        elif reponse == 3:
+            questions_par_lettre["Neutre"].append(i + 1)
+        elif reponse == 4:
+            questions_par_lettre["D'accord"].append(i + 1)
+        elif reponse == 5:
+            questions_par_lettre["Tout à fait d'accord"].append(i + 1)
+
+    for lettre, questions in questions_par_lettre.items():
+        print(f"Réponse {lettre} choisie pour les questions : {questions}")
+
+    #Calcule taux du choix fortement d'accord
+    Taux_Fdac = (len(questions_par_lettre["Tout à fait d'accord"]) / 240)*100
+    print(f"Taux de réponses 'Tout à fait d'accord': {Taux_Fdac:.2%}")
+
+    #Calcule taux du choix d'accord
+    Taux_Dac = (len(questions_par_lettre["D'accord"]) / 240)*100
+    print(f"Taux de réponses 'D'accord': {Taux_Dac:.2%}")
+
+    #Calcule taux du choix neutre
+    Taux_Ntr = (len(questions_par_lettre["Neutre"]) / 240)*100
+    print(f"Taux de réponses 'Neutre': {Taux_Ntr:.2%}")
+
+    #Calcule taux du choix pas d'accord
+    Taux_PDac = (len(questions_par_lettre["Pas d'accord"]) / 240)*100
+    print(f"Taux de réponses 'Pas d'accord': {Taux_PDac:.2%}")
+
+    #Calcule taux du choix pas du tout d'accord
+    Taux_PDDac = (len(questions_par_lettre["Pas du tout d'accord"]) / 240)*100
+    print(f"Taux de réponses 'Pas du tout d'accord': {Taux_PDDac:.2%}")
+    # Affichage des taux dans l'interface graphique
+    taux_frame = tk.Frame(scrollable_frame)
+    taux_frame.pack(pady=(20, 10), fill='x')
+    label_titre_taux = ttk.Label(taux_frame, text="Les taux des choix du candidat :", font=("Helvetica", 16, 'bold'), padding=(10, 10))
+    label_titre_taux.pack(anchor='w')
+
+    label_taux_fdac = ttk.Label(taux_frame, text=f"Taux 'Tout à fait d'accord' : {Taux_Fdac:.2f}%", font=("Helvetica", 14))
+    label_taux_fdac.pack(anchor='w')
+    label_taux_dac = ttk.Label(taux_frame, text=f"Taux 'D'accord' : {Taux_Dac:.2f}%", font=("Helvetica", 14))
+    label_taux_dac.pack(anchor='w')
+    label_taux_ntr = ttk.Label(taux_frame, text=f"Taux 'Neutre' : {Taux_Ntr:.2f}%", font=("Helvetica", 14))
+    label_taux_ntr.pack(anchor='w')
+    label_taux_pdac = ttk.Label(taux_frame, text=f"Taux 'Pas d'accord' : {Taux_PDac:.2f}%", font=("Helvetica", 14))
+    label_taux_pdac.pack(anchor='w')
+    label_taux_pddac = ttk.Label(taux_frame, text=f"Taux 'Pas du tout d'accord' : {Taux_PDDac:.2f}%", font=("Helvetica", 14))
+    label_taux_pddac.pack(anchor='w')
 
     button_frame = ttk.Frame(root)
     button_frame.pack(side=tk.BOTTOM, pady=20)
